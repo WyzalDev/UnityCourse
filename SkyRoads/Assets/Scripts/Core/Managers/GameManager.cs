@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UI;
 using UI.Views;
 using Core.Data;
@@ -15,53 +16,82 @@ namespace Core.Managers
     {
         [SerializeField] private ScoreManager _scoreManager;
         [SerializeField] private Player _player;
+        [SerializeField] private Button _pauseButton;
 
-        [SerializeField] private List<GameObject> _controlableObjects;
-        
+        [SerializeField] private List<GameObject> _controllableObjects;
+
+        private List<IPausable> _pausableObjects;
+        private List<IRestorable> _restorableObjects;
+
         private void Start()
         {
             _player.PlayerCrashed += OnEndGame;
+            _pauseButton.onClick.AddListener(OnPauseButtonClicked);
+
+            _pausableObjects = new List<IPausable>();
+            _restorableObjects = new List<IRestorable>();
+
+            foreach (var controllable in _controllableObjects)
+            {
+                if (controllable.TryGetComponent<IPausable>(out var pausable))
+                    _pausableObjects.Add(pausable);
+
+                if (controllable.TryGetComponent<IRestorable>(out var restorable))
+                    _restorableObjects.Add(restorable);
+            }
         }
-        
+
         public void RestartGame()
         {
             Restore();
+            UnpauseGame();
+        }
 
-            foreach (var possiblePausable in _controlableObjects)
-            {
-                if (possiblePausable.TryGetComponent<IPausable>(out var component))
-                    component.IsPaused = false;
-            }
+        private void PauseGame()
+        {
+            foreach (var pausable in _pausableObjects)
+                pausable.IsPaused = true;
+        }
+
+        private void UnpauseGame()
+        {
+            foreach (var pausable in _pausableObjects)
+                pausable.IsPaused = false;
+        }
+
+        private void OnPauseButtonClicked()
+        {
+            PageManager.Show<PausePage>(new Action(UnpauseGame));
+            PauseGame();
         }
 
         private void Restore()
         {
-            foreach (var possibleRestorable in _controlableObjects)
-            {
-                if (possibleRestorable.TryGetComponent<IRestorable>(out var component))
-                    component.Restore();
-            }
+            foreach (var restorable in _restorableObjects)
+                restorable.Restore();
         }
 
         private void OnEndGame()
         {
-            foreach (var possiblePausable in _controlableObjects)
-            {
-                if (possiblePausable.TryGetComponent<IPausable>(out var component))
-                    component.IsPaused = true;
-            }
+            PauseGame();
 
             var scoreInfo = new RecordInfo(_scoreManager.Score, DateTime.Now, Timer.Value);
+            var pageData = new PageData()
+            {
+                Score = _scoreManager.Score,
+                Action = RestartGame
+            };
 
             if (ScoreRecords.TryAdd(scoreInfo))
-                PageManager.Show<WinPage>(_scoreManager.Score);
+                PageManager.Show<WinPage>(pageData);
             else
-                PageManager.Show<LoosePage>(_scoreManager.Score);
+                PageManager.Show<LoosePage>(pageData);
         }
 
         private void OnDestroy()
         {
             _player.PlayerCrashed -= OnEndGame;
+            _pauseButton.onClick.RemoveListener(OnPauseButtonClicked);
         }
     }
 }
