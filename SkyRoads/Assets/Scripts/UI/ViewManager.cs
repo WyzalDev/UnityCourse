@@ -8,19 +8,14 @@ namespace UI
     public abstract class ViewManager<T> : MonoBehaviour where T : View
     {
         [SerializeField] protected T[] _views;
-
+        
         private View _currentView;
         protected readonly Stack<T> _history = new();
 
         protected void Start()
         {
             foreach (var view in _views)
-            {
-                if(view is IInitializable initializable)
-                    initializable.Initialize();
-
                 view.Hide();
-            }
         }
 
         protected void Show(T view, object data = null)
