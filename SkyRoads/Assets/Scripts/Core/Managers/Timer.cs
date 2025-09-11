@@ -8,7 +8,7 @@ namespace Core.Managers
     {
         public static float Value { get; private set; }
         public static float GameDifficultMultiplier { get; private set; }
-        
+
         public bool IsPaused { get; set; }
 
         private void Start()

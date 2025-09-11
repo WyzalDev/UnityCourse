@@ -15,6 +15,7 @@ namespace Core.MovingContainer
 
         [Header("Boost Settings")]
         [SerializeField] private float _boostTransitionDuration;
+        [SerializeField] private ParticleSystem _boostParticles;
 
         public bool IsPaused { get; set; }
 
@@ -36,17 +37,20 @@ namespace Core.MovingContainer
         {
             _currentBoostMultiplier = startParameters.SpeedMultiplier;
             _lerpControl = 0f;
+            _boostParticles.Play();
         }
 
         public void OnBoostEnd(BoostData endParameters)
         {
             _currentBoostMultiplier = endParameters.SpeedMultiplier;
             _lerpControl = 0f;
+            _boostParticles.Stop();
         }
 
         public void Restore()
         {
             transform.position = Vector3.zero;
+            _boostParticles.Clear();
         }
 
         private void FixedUpdate()

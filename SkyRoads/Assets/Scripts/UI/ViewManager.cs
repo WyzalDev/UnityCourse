@@ -8,7 +8,7 @@ namespace UI
     public abstract class ViewManager<T> : MonoBehaviour where T : View
     {
         [SerializeField] protected T[] _views;
-        
+
         private View _currentView;
         protected readonly Stack<T> _history = new();
 
@@ -32,7 +32,7 @@ namespace UI
         {
             if (_history.Count <= 0)
                 return;
-            
+
             var view = _history.Pop();
             view.Hide();
 

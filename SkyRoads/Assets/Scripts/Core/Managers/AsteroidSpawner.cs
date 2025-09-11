@@ -46,7 +46,7 @@ namespace Core.Managers
 
             _asteroids.Initialize(asteroids);
         }
-        
+
         public void OnBoostStart(BoostData startParameters)
         {
             ChangeBoostMultiplier(startParameters.AsteroidSpawnRateMultiplier);
@@ -56,7 +56,7 @@ namespace Core.Managers
         {
             ChangeBoostMultiplier(endParameters.AsteroidSpawnRateMultiplier);
         }
-        
+
         private void ChangeBoostMultiplier(float boostMultiplier)
         {
             _currentBoostMultiplier = boostMultiplier > 1f ? boostMultiplier : 1f;
@@ -109,6 +109,5 @@ namespace Core.Managers
                 nextAsteroid.transform.position = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
             }
         }
-
     }
 }
