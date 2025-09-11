@@ -11,7 +11,6 @@ namespace UI.Views
     public class PausePage : Page
     {
         [SerializeField] private AudioMixerGroup _audioMixerGroup;
-        [SerializeField] private Button _pauseButton;
         [SerializeField] private Button _backToGameButton;
 
         [Header("Fade Settings")]
@@ -20,7 +19,7 @@ namespace UI.Views
         [SerializeField] private float _fadeDuration;
 
         private Action _unpauseAction;
-        
+
         private void Start()
         {
             _backToGameButton.onClick.AddListener(OnBackToGameButtonClicked);
@@ -31,8 +30,6 @@ namespace UI.Views
             if (data is Action unpauseAction)
                 _unpauseAction = unpauseAction;
             
-            _pauseButton.interactable = false;
-
             _fade.DOFade(_maxFadeValue, _fadeDuration)
                 .SetEase(Ease.InQuart)
                 .OnComplete(() => base.Show(data));
@@ -43,7 +40,6 @@ namespace UI.Views
             base.Hide();
 
             _fade.color = new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f);
-            _pauseButton.interactable = true;
         }
 
         public void OnMusicToggle(bool isOn)

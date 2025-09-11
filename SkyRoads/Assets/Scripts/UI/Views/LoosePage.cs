@@ -11,7 +11,7 @@ namespace UI.Views
     {
         [SerializeField] private TMP_Text _score;
         [SerializeField] private Button _restartButton;
-        
+
         private Action _restartAction;
 
         private void Start()

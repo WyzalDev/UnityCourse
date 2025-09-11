@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
+
+using System;
 
 namespace Core.Data
 {
@@ -7,5 +9,6 @@ namespace Core.Data
     {
         public float SpeedMultiplier;
         public float AsteroidSpawnRateMultiplier;
+        public float BoostEffectLifetime;
     }
 }

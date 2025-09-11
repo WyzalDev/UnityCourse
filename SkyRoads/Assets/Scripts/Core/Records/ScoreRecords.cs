@@ -16,10 +16,10 @@ namespace Core.Records
                 _scoreRecords.Add(record);
                 return true;
             }
-            
+
             if(_scoreRecords.Contains(record) || _scoreRecords[0].Score >= record.Score)
                 return false;
-            
+
             _scoreRecords.Insert(0, record);
             return true;
         }

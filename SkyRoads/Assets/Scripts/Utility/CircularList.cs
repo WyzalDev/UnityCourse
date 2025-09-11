@@ -7,7 +7,7 @@ namespace Utility
     public class CircularList<T>
     {
         public T Current => _list[_current];
-        
+
         private List<T> _list;
         private int _current;
 

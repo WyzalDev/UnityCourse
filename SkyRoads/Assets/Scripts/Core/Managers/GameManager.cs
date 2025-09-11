@@ -17,6 +17,7 @@ namespace Core.Managers
         [SerializeField] private ScoreManager _scoreManager;
         [SerializeField] private Player _player;
         [SerializeField] private Button _pauseButton;
+        [SerializeField] private float _endGameUIDelay;
 
         [SerializeField] private List<GameObject> _controllableObjects;
 
@@ -51,12 +52,16 @@ namespace Core.Managers
         {
             foreach (var pausable in _pausableObjects)
                 pausable.IsPaused = true;
+            
+            _pauseButton.interactable = false;
         }
 
         private void UnpauseGame()
         {
             foreach (var pausable in _pausableObjects)
                 pausable.IsPaused = false;
+            
+            _pauseButton.interactable = true;
         }
 
         private void OnPauseButtonClicked()
@@ -74,7 +79,11 @@ namespace Core.Managers
         private void OnEndGame()
         {
             PauseGame();
+            Invoke(nameof(ShowEndGameUI), _endGameUIDelay);
+        }
 
+        private void ShowEndGameUI()
+        {
             var scoreInfo = new RecordInfo(_scoreManager.Score, DateTime.Now, Timer.Value);
             var pageData = new PageData()
             {

@@ -12,7 +12,7 @@ namespace Core.Camera
         [SerializeField] private float _smoothSpeed;
 
         public bool IsPaused { get; set; }
-        
+
         private Vector3 _defaultOffset;
         private Vector3 _boostOffset;
         private Vector3 _currentOffset;
@@ -24,7 +24,7 @@ namespace Core.Camera
 
             _currentOffset = _defaultOffset;
         }
-        
+
         public void OnBoostStart(BoostData parameters)
         {
             _currentOffset = _boostOffset;
