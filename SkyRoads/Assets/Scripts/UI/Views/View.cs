@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace UI
+namespace UI.Views
 {
     public abstract class View : MonoBehaviour
     {

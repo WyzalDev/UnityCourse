@@ -3,9 +3,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UI;
-using UI.Views;
+using UI.Data;
+using UI.Managers;
+using UI.Views.Game;
 using Core.Data;
 using Core.MovingContainer;
 using Core.Records;
@@ -52,7 +54,7 @@ namespace Core.Managers
         {
             foreach (var pausable in _pausableObjects)
                 pausable.IsPaused = true;
-            
+
             _pauseButton.interactable = false;
         }
 
@@ -60,13 +62,23 @@ namespace Core.Managers
         {
             foreach (var pausable in _pausableObjects)
                 pausable.IsPaused = false;
-            
+
             _pauseButton.interactable = true;
+        }
+
+        private void BackToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
         }
 
         private void OnPauseButtonClicked()
         {
-            PageManager.Show<PausePage>(new Action(UnpauseGame));
+            PageManager.Show<PausePage>(new PauseData()
+            {
+                ButtonAction = UnpauseGame,
+                BackToMenuAction = BackToMenu
+            });
+
             PauseGame();
         }
 
@@ -85,10 +97,11 @@ namespace Core.Managers
         private void ShowEndGameUI()
         {
             var scoreInfo = new RecordInfo(_scoreManager.Score, DateTime.Now, Timer.Value);
-            var pageData = new PageData()
+            var pageData = new WinLoseData()
             {
                 Score = _scoreManager.Score,
-                Action = RestartGame
+                ButtonAction = RestartGame,
+                BackToMenuAction = BackToMenu
             };
 
             if (ScoreRecords.TryAdd(scoreInfo))

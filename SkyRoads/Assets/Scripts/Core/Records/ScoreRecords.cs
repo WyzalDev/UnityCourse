@@ -7,20 +7,20 @@ namespace Core.Records
 {
     public static class ScoreRecords
     {
-        private static List<RecordInfo> _scoreRecords = new();
+        public static List<RecordInfo> Records { get; } = new();
 
         public static bool TryAdd(RecordInfo record)
         {
-            if (_scoreRecords.Count == 0)
+            if (Records.Count == 0)
             {
-                _scoreRecords.Add(record);
+                Records.Add(record);
                 return true;
             }
 
-            if(_scoreRecords.Contains(record) || _scoreRecords[0].Score >= record.Score)
+            if (Records.Contains(record) || Records[0].Score >= record.Score)
                 return false;
 
-            _scoreRecords.Insert(0, record);
+            Records.Insert(0, record);
             return true;
         }
     }

@@ -2,17 +2,19 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UI.Views;
 
-namespace UI
+namespace UI.Managers
 {
     public abstract class ViewManager<T> : MonoBehaviour where T : View
     {
         [SerializeField] protected T[] _views;
 
         private View _currentView;
+
         protected readonly Stack<T> _history = new();
 
-        protected void Start()
+        protected void Awake()
         {
             foreach (var view in _views)
                 view.Hide();

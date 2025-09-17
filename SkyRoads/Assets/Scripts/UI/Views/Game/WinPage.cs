@@ -4,13 +4,16 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UI.Data;
+using UI.Managers;
 
-namespace UI.Views
+namespace UI.Views.Game
 {
     public class WinPage : Page
     {
         [SerializeField] private TMP_Text _score;
         [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _backToMenuButton;
 
         [Header("Fireworks Settings")]
         [SerializeField] private ParticleSystem _fireworkPrefab;
@@ -23,20 +26,23 @@ namespace UI.Views
         [SerializeField] private RectTransform _popupTransform;
 
         private Action _restartAction;
+        private Action _backToMenuAction;
         private ParticleSystem _firstFireWork;
         private ParticleSystem _secondFireWork;
 
         private void Start()
         {
             _restartButton.onClick.AddListener(OnRestartButtonClicked);
+            _backToMenuButton.onClick.AddListener(OnBackToMenuButtonClicked);
         }
 
         public override void Show(object data = null)
         {
-            if (data is PageData pageData)
+            if (data is WinLoseData winLoseData)
             {
-                _score.text = pageData.Score.ToString();
-                _restartAction = pageData.Action;
+                _score.text = winLoseData.Score.ToString();
+                _restartAction = winLoseData.ButtonAction;
+                _backToMenuAction = winLoseData.BackToMenuAction;
             }
 
             base.Show(data);
@@ -60,10 +66,10 @@ namespace UI.Views
         public override void Hide()
         {
             base.Hide();
-            if(_firstFireWork != null)
+            if (_firstFireWork != null)
                 _firstFireWork.gameObject.SetActive(false);
 
-            if(_secondFireWork != null)
+            if (_secondFireWork != null)
                 _secondFireWork.gameObject.SetActive(false);
         }
 
@@ -73,9 +79,15 @@ namespace UI.Views
             _restartAction?.Invoke();
         }
 
+        private void OnBackToMenuButtonClicked()
+        {
+            _backToMenuAction?.Invoke();
+        }
+
         private void OnDestroy()
         {
             _restartButton.onClick.RemoveListener(OnRestartButtonClicked);
+            _backToMenuButton.onClick.RemoveListener(OnBackToMenuButtonClicked);
         }
     }
 }
