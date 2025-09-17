@@ -2,12 +2,11 @@
 
 using System;
 
-namespace UI
+namespace UI.Data
 {
     [Serializable]
-    public class PageData
+    public class WinLoseData : PauseData
     {
         public long Score;
-        public Action Action;
     }
 }

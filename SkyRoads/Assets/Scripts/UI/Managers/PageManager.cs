@@ -1,8 +1,9 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System.Linq;
+using UI.Views;
 
-namespace UI
+namespace UI.Managers
 {
     public class PageManager : ViewManager<Page>
     {
@@ -11,6 +12,7 @@ namespace UI
         protected void Awake()
         {
             _instance = this;
+            base.Awake();
         }
 
         public static bool TryGetView<TPage>(out TPage view) where TPage : Page

@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: {fileID: 8342513552895383313}
   _restartButton: {fileID: 7161650064187615321}
+  _backToMenuButton: {fileID: 7166665567950976648}
   _fireworkPrefab: {fileID: 4823116491294556292, guid: 20c1808ba8bf51743bee1d8abf855810, type: 3}
   _fireworkLifetime: 7.3
   _firstFireworkTransform: {fileID: 0}
