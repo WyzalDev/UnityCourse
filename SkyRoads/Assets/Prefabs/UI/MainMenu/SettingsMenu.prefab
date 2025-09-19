@@ -619,19 +619,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Views.PauseView, Assembly-CSharp
-        m_MethodName: OnSoundEffectsToggle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &3403570374190935882
 GameObject:
@@ -828,19 +816,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Views.PauseView, Assembly-CSharp
-        m_MethodName: OnMusicToggle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &4530194785402830110
 GameObject:
@@ -1139,6 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8587153821998968879}
   - component: {fileID: 7978152663656009626}
+  - component: {fileID: 7254701795576692734}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -1186,6 +1163,22 @@ MonoBehaviour:
   _musicToggle: {fileID: 1537378661827414780}
   _sfxToggle: {fileID: 6491388235084899327}
   _backToMenuButton: {fileID: 8945967950393000740}
+--- !u!114 &7254701795576692734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203678270835970009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 4338499118094374862}
+  - {fileID: 2945220757663420159}
+  - {fileID: 7738008112927385829}
 --- !u!1 &6778935619430030841
 GameObject:
   m_ObjectHideFlags: 0

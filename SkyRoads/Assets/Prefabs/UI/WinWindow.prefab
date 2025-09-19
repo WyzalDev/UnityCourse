@@ -925,6 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2414086023480661155}
   - component: {fileID: 8606782102492701060}
+  - component: {fileID: 5635399659249143661}
   m_Layer: 5
   m_Name: WinWindow
   m_TagString: Untagged
@@ -978,6 +979,21 @@ MonoBehaviour:
   _secondFireworkTransform: {fileID: 0}
   _popupText: {fileID: 3662362132682572236, guid: c0f2f3d79d3819a49918d6e3276463a3, type: 3}
   _popupTransform: {fileID: 3038370448503447151}
+--- !u!114 &5635399659249143661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430560208902540583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 3243208212200509147}
+  - {fileID: 4441163594048644623}
 --- !u!1 &4441163594048644623
 GameObject:
   m_ObjectHideFlags: 0

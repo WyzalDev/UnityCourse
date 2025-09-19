@@ -483,6 +483,7 @@ MonoBehaviour:
   - {fileID: 8785560085068550605}
   - {fileID: 8785560085068550604}
   - {fileID: 8785560085068550603}
+  - {fileID: 1296824564}
 --- !u!1 &602530816
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +730,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993985775}
   m_CullTransparentMesh: 1
+--- !u!1 &1296824564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296824565}
+  - component: {fileID: 1296824566}
+  m_Layer: 0
+  m_Name: BoostAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1296824565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296824564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1526139872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296824566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296824564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7778bfdecaec497e8eaca148942da5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixerGroup: {fileID: -5351397402818051897, guid: f6fe92ed1b44fbf459b6ffa7ef151e7d, type: 2}
 --- !u!1 &1399913859
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +859,7 @@ MonoBehaviour:
   - {fileID: 1817566395}
   - {fileID: 8785560085068550603}
   - {fileID: 8785560085068550605}
+  - {fileID: 1296824564}
   _startBoostData:
     SpeedMultiplier: 2
     AsteroidSpawnRateMultiplier: 1.5
@@ -938,6 +985,7 @@ Transform:
   - {fileID: 2122983819}
   - {fileID: 756419142}
   - {fileID: 1458034864}
+  - {fileID: 1296824565}
   - {fileID: 1817566396}
   - {fileID: 594858424}
   - {fileID: 1486960872}

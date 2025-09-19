@@ -1318,6 +1318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6149803858166002120}
   - component: {fileID: 4194353960994035180}
+  - component: {fileID: 5603917453635530232}
   m_Layer: 5
   m_Name: ComicMenu
   m_TagString: Untagged
@@ -1452,6 +1453,22 @@ MonoBehaviour:
     \u0433\u0434\u0435-\u0442\u043E \u0442\u0430\u043C, \u0432\u043F\u0435\u0440\u0435\u0434\u0438,
     \u043D\u0435\u0432\u0438\u0434\u0438\u043C\u0430\u044F \u0438 \u043D\u0435\u0434\u043E\u0441\u0442\u0438\u0436\u0438\u043C\u0430\u044F.
     \u041F\u043E\u043B\u0435\u0442 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u043B\u0441\u044F."
+--- !u!114 &5603917453635530232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088533194191699387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 4003804657112182554}
+  - {fileID: 7336586298277359883}
+  - {fileID: 7812373303966866211}
 --- !u!1 &7310395309332074842
 GameObject:
   m_ObjectHideFlags: 0

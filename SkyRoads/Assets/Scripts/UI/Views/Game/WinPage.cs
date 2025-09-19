@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Audio.Managers;
 using UI.Data;
 using UI.Managers;
 
@@ -49,6 +50,9 @@ namespace UI.Views.Game
 
             Instantiate(_popupText, _popupTransform);
             InstantiateFireworks();
+            
+            AudioManager.PlaySfx("WinSound");
+            AudioManager.PlaySfx("GameOver");
         }
 
         private void InstantiateFireworks()

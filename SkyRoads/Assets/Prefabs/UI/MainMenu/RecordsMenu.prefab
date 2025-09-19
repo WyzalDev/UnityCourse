@@ -456,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3564908596391453597}
   - component: {fileID: 1124856433594342061}
+  - component: {fileID: 6380020138135400197}
   m_Layer: 5
   m_Name: RecordsMenu
   m_TagString: Untagged
@@ -503,6 +504,20 @@ MonoBehaviour:
   _recordElementPrefab: {fileID: 624020486388469499, guid: 067b4921b3ff92745a61c2f9e477b22c, type: 3}
   _parent: {fileID: 7705497375211957318}
   _backButton: {fileID: 1683026641676152288}
+--- !u!114 &6380020138135400197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131153466837525932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 8384839601094899837}
 --- !u!1 &4469187416737333585
 GameObject:
   m_ObjectHideFlags: 0
