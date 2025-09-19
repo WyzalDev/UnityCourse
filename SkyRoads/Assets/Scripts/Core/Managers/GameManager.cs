@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Audio.Managers;
 using UI.Data;
 using UI.Managers;
 using UI.Views.Game;
@@ -42,6 +43,8 @@ namespace Core.Managers
                 if (controllable.TryGetComponent<IRestorable>(out var restorable))
                     _restorableObjects.Add(restorable);
             }
+
+            AudioManager.PlayMusic("GameMusic");
         }
 
         public void RestartGame()
@@ -91,6 +94,9 @@ namespace Core.Managers
         private void OnEndGame()
         {
             PauseGame();
+
+            AudioManager.PlaySfxWithPitch("ShipDestroySound");
+
             Invoke(nameof(ShowEndGameUI), _endGameUIDelay);
         }
 

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d19ceff8bd24004a1aae0ee3a75038d, type: 3}
+  m_Name: DefaultAudioStorage
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: 0f4360036d7d56142adb5844ce739c1d, type: 3}
+  - Name: GameMusic
+    Clip: {fileID: 8300000, guid: e491313c401b0e64c8a6b9cca91625ad, type: 3}
+  - Name: UIButtonClickSound
+    Clip: {fileID: 8300000, guid: a2a6c797f7398964ba81989db1a36ef9, type: 3}
+  - Name: ShipDestroySound
+    Clip: {fileID: 8300000, guid: 4e2893bc2211e7b4eb314c8979f40a72, type: 3}
+  - Name: BoostOnSound
+    Clip: {fileID: 8300000, guid: 459f42c09085c484992e8e88b620407b, type: 3}
+  - Name: BoostOffSound
+    Clip: {fileID: 8300000, guid: 64adccc91c75e1e47bd342081c5ab04c, type: 3}
+  - Name: WinSound
+    Clip: {fileID: 8300000, guid: 306e8387d4dcd0d498b7d6484f1e63ed, type: 3}
+  - Name: GameOver
+    Clip: {fileID: 8300000, guid: 755bc038de4a7b74cb763fc93b567410, type: 3}
+  - Name: BoostEngine
+    Clip: {fileID: 8300000, guid: 949c2911ee37f024f9f372b27d30b9a8, type: 3}

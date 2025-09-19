@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2604111610663604975}
   - component: {fileID: 8251590071682607509}
+  - component: {fileID: 6409216483297681852}
   m_Layer: 5
   m_Name: ExitPopup
   m_TagString: Untagged
@@ -191,6 +192,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 272647852848929121}
   _backButton: {fileID: 508078505986953159}
+--- !u!114 &6409216483297681852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441823392716976447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 8188450031645569687}
+  - {fileID: 2202302337766784933}
 --- !u!1 &2202302337766784933
 GameObject:
   m_ObjectHideFlags: 0

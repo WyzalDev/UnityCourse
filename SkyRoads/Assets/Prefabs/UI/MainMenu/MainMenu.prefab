@@ -891,6 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360156117957409688}
   - component: {fileID: 9166366387838697612}
+  - component: {fileID: 6047875730329314711}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -939,6 +940,24 @@ MonoBehaviour:
   _settingsButton: {fileID: 2504584707333002403}
   _exitButton: {fileID: 8033556638284215859}
   _comicButton: {fileID: 4974546176201552900}
+--- !u!114 &6047875730329314711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596006329605092500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 2247764314239771129}
+  - {fileID: 2531559316903940638}
+  - {fileID: 5020322731622168617}
+  - {fileID: 3560570356649760577}
+  - {fileID: 2572321276264847930}
 --- !u!1 &7664917977992335631
 GameObject:
   m_ObjectHideFlags: 0

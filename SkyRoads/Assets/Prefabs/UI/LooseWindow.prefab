@@ -653,6 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5436571450914437501}
   - component: {fileID: 9045853178348534020}
+  - component: {fileID: 8884457097307088220}
   m_Layer: 5
   m_Name: LooseWindow
   m_TagString: Untagged
@@ -699,6 +700,21 @@ MonoBehaviour:
   _score: {fileID: 7713642785647147918}
   _restartButton: {fileID: 5563089919601193268}
   _backToMenuButton: {fileID: 3245367759578403290}
+--- !u!114 &8884457097307088220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130361051316661593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda616040a04631971c25d877d7b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllables:
+  - {fileID: 6398485834347953924}
+  - {fileID: 3473930110792353423}
 --- !u!1 &6398485834347953924
 GameObject:
   m_ObjectHideFlags: 0
