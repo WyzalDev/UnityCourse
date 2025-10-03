@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ec804cdcc9410abed32de28d578e58, type: 3}
+  m_Name: TripleTurretType
+  m_EditorClassIdentifier: 
+  _fireRate: 0.2
+  _projectileData:
+    Prefab: {fileID: 4507683652896293527, guid: 7487aea0f6a00b24da6718d4a91c681a, type: 3}
+    Speed: 200
+    LifeTime: 2.2
+    Damage: 10
+  _firePointDisplacement: {x: 1, y: 0}
+  _fireAngle: 15
