@@ -1,0 +1,19 @@
+﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
+
+using UnityEngine;
+
+namespace Core.Data.TurretTypes
+{
+    [CreateAssetMenu(fileName = "NewBaseTurretTypeConfig", menuName = "Gameplay/TurretTypes/Base", order = 0)]
+    public class BaseTurretConfig : ScriptableObject
+    {
+        [Header("Fire Settings")]
+        [SerializeField] private float _fireRate;
+
+        [Header("Projectile Settings")]
+        [SerializeField] private ProjectileData _projectileData;
+
+        public float FireRate => _fireRate;
+        public ProjectileData ProjectileData => _projectileData;
+    }
+}
