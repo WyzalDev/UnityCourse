@@ -11,6 +11,7 @@ namespace Core.Managers
         [SerializeField] private EnemyManager _enemyManager;
         [SerializeField] private UltimateManager _ultimateManager;
         [SerializeField] private ProjectilesManager _projectilesManager;
+        [SerializeField] private HUDManager _hudManager;
         [SerializeField] private Button _pauseButton;
         [SerializeField] private Button _unpauseButton;
         [SerializeField] private Button _restartButton;
@@ -65,6 +66,7 @@ namespace Core.Managers
             if (_playerShip?.Ultimate is not Ultimate ultimate)
                 return;
 
+            _hudManager.SetNewPlayer(_playerShip);
             _ultimateManager.SetNewPlayerUltimate(ultimate);
             _enemyManager.OnEnemyHitted += ultimate.AddPercentage;
         }
@@ -101,7 +103,6 @@ namespace Core.Managers
         {
             PauseGame();
             DestroyPlayer();
-            Debug.Log($"Score : {ScoreManager.Score}");
         }
 
         private void OnPlayerDeath(Ship playerShip, int health)
@@ -115,7 +116,10 @@ namespace Core.Managers
                 return;
 
             if (_playerShip.Ultimate is Ultimate ultimate)
+            {
                 _enemyManager.OnEnemyHitted -= ultimate.AddPercentage;
+                _hudManager.SetNewPlayer(null);
+            }
 
             _ultimateManager.OnPlayerDestroyed();
             _restorables.Remove(_playerShip);

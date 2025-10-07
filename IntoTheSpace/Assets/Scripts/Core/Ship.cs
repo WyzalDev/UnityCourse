@@ -14,51 +14,41 @@ namespace Core
         [SerializeField] private ShipConfig shipConfig;
 
         public Action<Ship, int> OnShipDestroyed;
+        public Action OnShipInitialized;
 
-        private IInitializable _movement;
-        private IInitializable _turret;
-        private IInitializable _ultimate;
-        private int _health;
-        private int _currentHealth;
         private float _waveModifier;
 
-        public IInitializable Movement => _movement;
-        public IInitializable Turret => _turret;
-        public IInitializable Ultimate => _ultimate;
+        public Action OnDamageTaken { get; set; }
 
-        private int CurrentHealth
-        {
-            get => _currentHealth;
-            set
-            {
-                _currentHealth = value;
-                if (value == 0)
-                    OnShipDestroyed?.Invoke(this, _health);
-            }
-        }
+        public IInitializable Movement { get; private set; }
+        public IInitializable Turret { get; private set; }
+        public IInitializable Ultimate { get; private set; }
+        public int CurrentHealth { get; private set; }
+        public int MaxHealth { get; private set; }
 
         private void Awake()
         {
-            _movement = GetComponent<Movement>();
-            _turret = GetComponent<Turret>();
+            Movement = GetComponent<Movement>();
+            Turret = GetComponent<Turret>();
             if (TryGetComponent<Ultimate>(out var ultimate))
-                _ultimate = ultimate;
+                Ultimate = ultimate;
         }
 
         private void Start()
         {
-            _health = Mathf.RoundToInt(shipConfig.Health * _waveModifier);
+            MaxHealth = Mathf.RoundToInt(shipConfig.Health * _waveModifier);
             Restore();
 
-            _movement.Initialize(shipConfig.Speed);
+            Movement.Initialize(shipConfig.Speed);
 
-            _turret.Initialize(new TurretData()
+            Turret.Initialize(new TurretData()
             {
                 turretConfig = shipConfig.BaseTurretData,
                 DifficultMultiplier = _waveModifier
             });
 
-            _ultimate?.Initialize(shipConfig.BaseTurretData.ProjectileData.Damage);
+            Ultimate?.Initialize(shipConfig.BaseTurretData.ProjectileData.Damage);
+            OnShipInitialized?.Invoke();
         }
 
         public void SetWaveModifier(float waveModifier)
@@ -68,12 +58,19 @@ namespace Core
 
         public void TakeDamage(int damage)
         {
-            CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, _health);
+            var formerHealth = CurrentHealth;
+            CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+
+            if (formerHealth > CurrentHealth)
+                OnDamageTaken?.Invoke();
+
+            if (CurrentHealth == 0)
+                OnShipDestroyed?.Invoke(this, MaxHealth);
         }
 
         public void Restore()
         {
-            _currentHealth = _health;
+            CurrentHealth = MaxHealth;
         }
     }
 }

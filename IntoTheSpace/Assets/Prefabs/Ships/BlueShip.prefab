@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: ultimateConfig
       value: 
       objectReference: {fileID: 11400000, guid: 14b4299887592184caab7100069e2766, type: 2}
+    - target: {fileID: -6594171624333312935, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+      propertyPath: _ultimateConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b4299887592184caab7100069e2766, type: 2}
     - target: {fileID: 4021133043356377005, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
       propertyPath: m_Name
       value: BlueShip
