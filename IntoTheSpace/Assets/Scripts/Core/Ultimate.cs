@@ -9,9 +9,11 @@ namespace Core
 {
     public class Ultimate : MonoBehaviour, IInitializable, IRestorable
     {
-        [SerializeField] UltimateConfig ultimateConfig;
+        [SerializeField] private UltimateConfig _ultimateConfig;
 
         public Action<float> OnUltimateUsed;
+        public Action OnUltimateReady;
+        public Action<float> OnUltimateFill;
 
         private InputAction _ultimateAction;
         private float _percentPerHit;
@@ -24,8 +26,8 @@ namespace Core
         {
             _ultimateAction = InputSystem.actions.FindAction("Ultimate");
             _ultimateAction.performed += Use;
-            _percentPerHit = ultimateConfig.PercentPerHit;
-            _ultimateMultiplier = ultimateConfig.DamagePercent;
+            _percentPerHit = _ultimateConfig.PercentPerHit;
+            _ultimateMultiplier = _ultimateConfig.DamagePercent;
         }
 
         public void Initialize(object data)
@@ -39,9 +41,11 @@ namespace Core
             _percentage = Mathf.Clamp(_percentage + _percentPerHit, 0, 1f);
             _isReady = Mathf.Approximately(_percentage, 1f);
 
-            //TODO: delete
+            if(_percentage != 0 && !Mathf.Approximately(_percentage, 1f))
+                OnUltimateFill?.Invoke(_percentage);
+
             if (_isReady)
-                Debug.Log("Ultimate Ready");
+                OnUltimateReady?.Invoke();
         }
 
         private void Use(InputAction.CallbackContext context)
@@ -51,7 +55,6 @@ namespace Core
 
             Restore();
             OnUltimateUsed?.Invoke(_baseDamage * _ultimateMultiplier);
-            Debug.Log("Ultimate Used");
         }
 
         public void Restore()

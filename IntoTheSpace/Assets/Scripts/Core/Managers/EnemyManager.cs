@@ -138,7 +138,6 @@ namespace Core.Managers
                 enemyMovement.OnPathEnded -= OnEnemyReachedEndPath.Invoke;
 
             Destroy(enemyShip.gameObject);
-            Debug.Log($"Health: {health}, Enemy destroyed");
         }
 
         public void Restore()

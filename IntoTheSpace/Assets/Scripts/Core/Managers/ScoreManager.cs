@@ -18,6 +18,7 @@ namespace Core.Managers
         private void Start()
         {
             _instance = this;
+            _scoreText.text = "0";
         }
 
         public static void AddScore(long value)
