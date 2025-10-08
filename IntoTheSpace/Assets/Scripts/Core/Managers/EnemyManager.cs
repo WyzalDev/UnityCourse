@@ -129,7 +129,7 @@ namespace Core.Managers
         private void OnEnemyDeath(Ship enemyShip, int health)
         {
             enemyShip.OnShipDestroyed -= OnEnemyDeath;
-            ScoreManager.AddScore(health);
+            Score.AddScore(health);
 
             _enemyShips.Remove(enemyShip);
             CurrentEnemiesCount--;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Core;
 
-namespace HUD
+namespace UI.HUD
 {
     public class UltimateIcon : MonoBehaviour
     {

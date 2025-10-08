@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace HUD.Bars
+namespace UI.HUD.Bars
 {
     public abstract class Bar : MonoBehaviour
     {

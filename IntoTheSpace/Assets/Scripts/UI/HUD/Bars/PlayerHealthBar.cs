@@ -2,7 +2,7 @@
 
 using Core;
 
-namespace HUD.Bars
+namespace UI.HUD.Bars
 {
     public class PlayerHealthBar : HealthBar
     {

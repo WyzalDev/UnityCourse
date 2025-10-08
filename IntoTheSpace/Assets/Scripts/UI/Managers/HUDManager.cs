@@ -1,10 +1,11 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using UnityEngine;
-using HUD;
-using HUD.Bars;
+using Core;
+using UI.HUD;
+using UI.HUD.Bars;
 
-namespace Core.Managers
+namespace UI.Managers
 {
     public class HUDManager : MonoBehaviour
     {
