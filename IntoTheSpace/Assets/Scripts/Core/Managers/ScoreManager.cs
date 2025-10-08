@@ -1,5 +1,6 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
+using Core.Data;
 using UnityEngine;
 using TMPro;
 
@@ -9,31 +10,26 @@ namespace Core.Managers
     {
         [SerializeField] private TMP_Text _scoreText;
 
-        private static ScoreManager _instance;
-
-        private long _score;
-
-        public static long Score => _instance._score;
-
         private void Start()
         {
-            _instance = this;
+            Score.Restore();
+            Score.OnValueChanged += OnScoreChanged;
             _scoreText.text = "0";
         }
 
-        public static void AddScore(long value)
+        private void OnScoreChanged()
         {
-            if (value <= 0)
-                return;
-
-            _instance._score += value;
-            _instance._scoreText.text = Score.ToString();
+            _scoreText.text = Score.Value.ToString();
         }
 
         public void Restore()
         {
-            _score = 0;
-            _instance._scoreText.text = Score.ToString();
+            Score.Restore();
+        }
+
+        private void OnDestroy()
+        {
+            Score.OnValueChanged -= OnScoreChanged;
         }
     }
 }
