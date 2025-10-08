@@ -64,8 +64,11 @@ namespace Core
             if (formerHealth > CurrentHealth)
                 OnDamageTaken?.Invoke();
 
-            if (CurrentHealth == 0)
-                OnShipDestroyed?.Invoke(this, MaxHealth);
+            if (CurrentHealth != 0)
+                return;
+
+            Instantiate(shipConfig.Effect, transform.position, Quaternion.identity);
+            OnShipDestroyed?.Invoke(this, MaxHealth);
         }
 
         public void Restore()

@@ -10,6 +10,8 @@ namespace Core.Turrets
     [Serializable]
     public class Projectile : MonoBehaviour, IInitializable
     {
+        [SerializeField] private ParticleSystem _hitEffect;
+
         private Rigidbody2D _rigidbody;
         private float _speed;
         private int _damage;
@@ -52,6 +54,7 @@ namespace Core.Turrets
             if (!other.collider.TryGetComponent<IDamageable>(out var damageable))
                 return;
 
+            Instantiate(_hitEffect, transform.position, transform.rotation);
             damageable.TakeDamage(_damage);
             ProjectilesManager.DestroyProjectile(this, other.collider.CompareTag("Enemy"));
         }

@@ -1,11 +1,15 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using Core;
+using Core.Managers;
+using DG.Tweening;
 
 namespace UI.HUD.Bars
 {
     public class PlayerHealthBar : HealthBar
     {
+        private Tween _animationTween;
+        
         public void SetNewPlayer(IDamageable damageable)
         {
             if (_damageable != null)
@@ -18,6 +22,14 @@ namespace UI.HUD.Bars
             _damageable.OnDamageTaken += ChangeValue;
             _image.color = _gradient.Evaluate(_slider.normalizedValue);
             playerShip.OnShipInitialized += OnShipInitialized;
+        }
+
+        protected override void ChangeValue()
+        {
+            base.ChangeValue();
+
+            VignetteManager.StartTakeDamageEffect();
+            _animationTween = transform.DOShakePosition(1f, 30f, 5);
         }
 
         private void OnShipInitialized()
