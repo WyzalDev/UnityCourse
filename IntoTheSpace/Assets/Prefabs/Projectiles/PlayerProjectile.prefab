@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c646a3ac84143f387690b1bdedfc04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitEffect: {fileID: 932224901116202059, guid: e478a1a7a512eb24f859c422e3b9d6dd, type: 3}
 --- !u!1 &6267910992037989697
 GameObject:
   m_ObjectHideFlags: 0

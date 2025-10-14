@@ -16,9 +16,13 @@ namespace Core.Data
         [Header("Fire Config")]
         [SerializeField] private BaseTurretConfig _baseTurretData;
 
+        [Header("Effects Config")]
+        [SerializeField] private ParticleSystem _effect;
+
         public string Name => _name;
         public int Health => _health;
         public float Speed => _speed;
         public BaseTurretConfig BaseTurretData => _baseTurretData;
+        public ParticleSystem Effect => _effect;
     }
 }

@@ -16,3 +16,4 @@ MonoBehaviour:
   _health: 100
   _speed: 5
   _baseTurretData: {fileID: 11400000, guid: 394d0161e1d2c1c4a88a146256eba4f3, type: 2}
+  _effect: {fileID: 2799481202181417691, guid: 677381e74e10d16499b19f73c50fb6d8, type: 3}
