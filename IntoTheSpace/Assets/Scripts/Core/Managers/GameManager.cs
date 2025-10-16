@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Audio.Managers;
 using Core.Data;
 using Core.Records;
 using UI.Data;
@@ -56,6 +57,8 @@ namespace Core.Managers
             }
 
             _cachedEndGameUIDelay = new WaitForSecondsRealtime(_endGameUIDelay);
+
+            AudioManager.PlayMusic("InGameMusic");
         }
 
         private void RestartGame()

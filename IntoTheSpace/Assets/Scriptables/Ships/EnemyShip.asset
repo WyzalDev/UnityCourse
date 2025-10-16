@@ -17,3 +17,4 @@ MonoBehaviour:
   _speed: 3
   _baseTurretData: {fileID: 11400000, guid: 54134fd0b5099ef419117698c856f515, type: 2}
   _effect: {fileID: 2799481202181417691, guid: 677381e74e10d16499b19f73c50fb6d8, type: 3}
+  _deathSoundName: EnemyDestroy

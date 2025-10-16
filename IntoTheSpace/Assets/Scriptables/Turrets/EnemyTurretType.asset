@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6613495630d4640947383adaa038e16, type: 3}
   m_Name: EnemyTurretType
   m_EditorClassIdentifier: 
-  _name: Enemy Turret
+  _description: 
   _fireRate: 0.5
+  _fireSoundName: EnemyBlasterShot
   _projectileData:
     Prefab: {fileID: 429705836622952211, guid: fb7304026ab57c04795b8443f25b56e3, type: 3}
     Speed: 150

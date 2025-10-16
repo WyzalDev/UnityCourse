@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a0cd34b8c745aea000e586174e29c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipConfig: {fileID: 11400000, guid: caff53722f57d4e449f7c269f02be2ba, type: 2}
+  _shipConfig: {fileID: 11400000, guid: caff53722f57d4e449f7c269f02be2ba, type: 2}
 --- !u!114 &1761361300625783033
 MonoBehaviour:
   m_ObjectHideFlags: 0

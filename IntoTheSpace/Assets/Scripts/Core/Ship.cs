@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using Audio.Managers;
 using Core.Data;
 using Core.Movements;
 using Core.Turrets;
@@ -11,7 +12,7 @@ namespace Core
     [RequireComponent(typeof(Movement), typeof(Turret))]
     public class Ship : MonoBehaviour, IRestorable, IDamageable
     {
-        [SerializeField] private ShipConfig shipConfig;
+        [SerializeField] private ShipConfig _shipConfig;
 
         public Action<Ship, int> OnShipDestroyed;
         public Action OnShipInitialized;
@@ -20,7 +21,7 @@ namespace Core
 
         public Action OnDamageTaken { get; set; }
 
-        public ShipConfig ShipConfig => shipConfig;
+        public ShipConfig ShipConfig => _shipConfig;
         public IInitializable Movement { get; private set; }
         public IInitializable Turret { get; private set; }
         public IInitializable Ultimate { get; private set; }
@@ -37,18 +38,18 @@ namespace Core
 
         private void Start()
         {
-            MaxHealth = Mathf.RoundToInt(shipConfig.Health * _waveModifier);
+            MaxHealth = Mathf.RoundToInt(_shipConfig.Health * _waveModifier);
             Restore();
 
-            Movement.Initialize(shipConfig.Speed);
+            Movement.Initialize(_shipConfig.Speed);
 
             Turret.Initialize(new TurretData()
             {
-                turretConfig = shipConfig.BaseTurretData,
+                turretConfig = _shipConfig.BaseTurretData,
                 DifficultMultiplier = _waveModifier
             });
 
-            Ultimate?.Initialize(shipConfig.BaseTurretData.ProjectileData.Damage);
+            Ultimate?.Initialize(_shipConfig.BaseTurretData.ProjectileData.Damage);
             OnShipInitialized?.Invoke();
         }
 
@@ -68,7 +69,8 @@ namespace Core
             if (CurrentHealth != 0)
                 return;
 
-            Instantiate(shipConfig.Effect, transform.position, Quaternion.identity);
+            Instantiate(_shipConfig.Effect, transform.position, Quaternion.identity);
+            AudioManager.PlaySfxWithPitch(_shipConfig.DeathSoundName);
             OnShipDestroyed?.Invoke(this, MaxHealth);
         }
 

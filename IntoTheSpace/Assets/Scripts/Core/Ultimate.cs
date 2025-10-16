@@ -3,6 +3,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Audio.Managers;
 using Core.Data;
 
 namespace Core
@@ -21,6 +22,10 @@ namespace Core
         private float _ultimateMultiplier;
         private float _percentage;
         private bool _isReady;
+        private bool _isReadySoundPlayed;
+
+        private const string UltimateReadySoundName = "UltimateReady";
+        private const string UltimateUsedSoundName = "UltimateUsed";
 
         private void Start()
         {
@@ -44,8 +49,16 @@ namespace Core
             if(_percentage != 0 && !Mathf.Approximately(_percentage, 1f))
                 OnUltimateFill?.Invoke(_percentage);
 
-            if (_isReady)
-                OnUltimateReady?.Invoke();
+            if (!_isReady)
+                return;
+
+            OnUltimateReady?.Invoke();
+            
+            if(_isReadySoundPlayed)
+                return;
+
+            AudioManager.PlaySfx(UltimateReadySoundName);
+            _isReadySoundPlayed = true;
         }
 
         private void Use(InputAction.CallbackContext context)
@@ -53,6 +66,7 @@ namespace Core
             if (!_isReady)
                 return;
 
+            AudioManager.PlaySfx(UltimateUsedSoundName);
             Restore();
             OnUltimateUsed?.Invoke(_baseDamage * _ultimateMultiplier);
         }
@@ -61,6 +75,7 @@ namespace Core
         {
             _percentage = 0;
             _isReady = false;
+            _isReadySoundPlayed = false;
         }
 
         private void OnDestroy()

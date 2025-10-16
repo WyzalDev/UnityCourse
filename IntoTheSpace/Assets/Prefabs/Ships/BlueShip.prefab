@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: shipConfig
       value: 
       objectReference: {fileID: 11400000, guid: 850d5badafbb3bb44b32a7ebcf59ba88, type: 2}
+    - target: {fileID: 7502717635547991731, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+      propertyPath: _shipConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 850d5badafbb3bb44b32a7ebcf59ba88, type: 2}
     - target: {fileID: 9184798039154381286, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
