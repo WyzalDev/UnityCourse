@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958714dd82ea4645b9ad9b3f3a2f040d, type: 3}
   m_Name: PlayerRedShip
   m_EditorClassIdentifier: 
-  _name: Red
+  _shipName: Red Ship
   _health: 100
   _speed: 5
   _baseTurretData: {fileID: 11400000, guid: 695e0a647b878da4097f3b8a1b7840f8, type: 2}

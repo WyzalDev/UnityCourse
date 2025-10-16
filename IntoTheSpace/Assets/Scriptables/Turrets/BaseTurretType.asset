@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6613495630d4640947383adaa038e16, type: 3}
   m_Name: BaseTurretType
   m_EditorClassIdentifier: 
+  _name: One Barrel Turret
   _fireRate: 0.1
   _projectileData:
     Prefab: {fileID: 6583978803216682310, guid: f26b4c643288804459428d3da70532df, type: 3}

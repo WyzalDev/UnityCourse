@@ -9,7 +9,7 @@ namespace Core.Data
     public class ShipConfig : ScriptableObject
     {
         [Header("Main Config")]
-        [SerializeField] private string _name;
+        [SerializeField] private string _shipName;
         [SerializeField] private int _health;
         [SerializeField] private float _speed;
 
@@ -19,7 +19,7 @@ namespace Core.Data
         [Header("Effects Config")]
         [SerializeField] private ParticleSystem _effect;
 
-        public string Name => _name;
+        public string ShipName => _shipName;
         public int Health => _health;
         public float Speed => _speed;
         public BaseTurretConfig BaseTurretData => _baseTurretData;

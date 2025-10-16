@@ -1,8 +1,8 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
+using DG.Tweening;
 using Core;
 using Core.Managers;
-using DG.Tweening;
 
 namespace UI.HUD.Bars
 {

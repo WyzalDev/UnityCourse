@@ -6,7 +6,7 @@ using Core;
 
 namespace UI.HUD
 {
-    public class UltimateIcon : MonoBehaviour
+    public class UltimateIcon : MonoBehaviour, IRestorable
     {
         [SerializeField] private Image _image;
         [SerializeField] Color _inactiveColor;
@@ -22,26 +22,31 @@ namespace UI.HUD
         {
             if (_ultimate != null)
             {
-                _ultimate.OnUltimateUsed -= UltimateUsed;
-                _ultimate.OnUltimateReady -= UltimateReady;
+                _ultimate.OnUltimateUsed -= OnUltimateUsed;
+                _ultimate.OnUltimateReady -= OnUltimateReady;
             }
 
             if (ultimate == null)
                 return;
 
             _ultimate = ultimate;
-            _ultimate.OnUltimateUsed += UltimateUsed;
-            _ultimate.OnUltimateReady += UltimateReady;
+            _ultimate.OnUltimateUsed += OnUltimateUsed;
+            _ultimate.OnUltimateReady += OnUltimateReady;
         }
 
-        private void UltimateUsed(float damage)
+        private void OnUltimateUsed(float damage)
         {
-            _image.color = _inactiveColor;
+            SetImageColor(_inactiveColor);
         }
 
-        private void UltimateReady()
+        private void OnUltimateReady()
         {
-            _image.color = Color.white;
+            SetImageColor(Color.white);
+        }
+
+        private void SetImageColor(Color color)
+        {
+            _image.color = color;
         }
 
         private void OnDestroy()
@@ -49,8 +54,13 @@ namespace UI.HUD
             if (_ultimate == null)
                 return;
 
-            _ultimate.OnUltimateUsed -= UltimateUsed;
-            _ultimate.OnUltimateReady -= UltimateReady;
+            _ultimate.OnUltimateUsed -= OnUltimateUsed;
+            _ultimate.OnUltimateReady -= OnUltimateReady;
+        }
+
+        public void Restore()
+        {
+            SetImageColor(_inactiveColor);
         }
     }
 }
