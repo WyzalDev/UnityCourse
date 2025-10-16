@@ -18,11 +18,13 @@ namespace Core.Data
 
         [Header("Effects Config")]
         [SerializeField] private ParticleSystem _effect;
+        [SerializeField] private string _deathSoundName;
 
         public string ShipName => _shipName;
         public int Health => _health;
         public float Speed => _speed;
         public BaseTurretConfig BaseTurretData => _baseTurretData;
         public ParticleSystem Effect => _effect;
+        public string DeathSoundName => _deathSoundName;
     }
 }

@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a0cd34b8c745aea000e586174e29c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipConfig: {fileID: 11400000, guid: 4c22df140cd5670449972d3616160d55, type: 2}
+  _shipConfig: {fileID: 11400000, guid: 4c22df140cd5670449972d3616160d55, type: 2}
 --- !u!114 &5053103781371352209
 MonoBehaviour:
   m_ObjectHideFlags: 0

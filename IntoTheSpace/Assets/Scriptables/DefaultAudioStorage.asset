@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d19ceff8bd24004a1aae0ee3a75038d, type: 3}
+  m_Name: DefaultAudioStorage
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: ee7331911dd58c841ac8e64ea8c35c08, type: 3}
+  - Name: InGameMusic
+    Clip: {fileID: 8300000, guid: ccdc67b499be7a9449883815334f37aa, type: 3}
+  - Name: PlayerBlasterShot
+    Clip: {fileID: 8300000, guid: 86611bd0eae70d2448bf8be5cd429467, type: 3}
+  - Name: PlayerBlasterShot2
+    Clip: {fileID: 8300000, guid: b0b7baa226c01a249bcf8cc4b7ae625a, type: 3}
+  - Name: EnemyBlasterShot
+    Clip: {fileID: 8300000, guid: 4af86ef395a9b2e46881baa7f675f399, type: 3}
+  - Name: BlasterHit
+    Clip: {fileID: 8300000, guid: 8528bf54d243ad54daabf92c353e2973, type: 3}
+  - Name: EnemyDestroy
+    Clip: {fileID: 8300000, guid: 5a42c878bce9bf7469d4f353eddb6be1, type: 3}
+  - Name: PlayerDestroy
+    Clip: {fileID: 8300000, guid: 59ff2f5f4b265244883daf70352a228a, type: 3}
+  - Name: UltimateReady
+    Clip: {fileID: 8300000, guid: 66804ac94fbea9f4b8ffe2c674d67908, type: 3}
+  - Name: UltimateUsed
+    Clip: {fileID: 8300000, guid: 5b791de5ddef9044186c0a82e0beb3b0, type: 3}
+  - Name: Win
+    Clip: {fileID: 8300000, guid: 683c2423456ca9a429b0b9fbb7814207, type: 3}
+  - Name: Loose
+    Clip: {fileID: 8300000, guid: ab534cf081fcba840b5964b00e1dd7d1, type: 3}
+  - Name: UITogglePressed
+    Clip: {fileID: 8300000, guid: bea725d2ed8a4e443bd88e600575d4ed, type: 3}
+  - Name: UIButtonPressed
+    Clip: {fileID: 8300000, guid: e3a85a60cb9c9cc4e9cf22c89be36be1, type: 3}

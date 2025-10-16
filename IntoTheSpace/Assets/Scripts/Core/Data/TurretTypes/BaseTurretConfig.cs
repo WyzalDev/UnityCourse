@@ -12,11 +12,14 @@ namespace Core.Data.TurretTypes
         [Header("Fire Settings")]
         [SerializeField] private float _fireRate;
 
+        [SerializeField] private string _fireSoundName;
+
         [Header("Projectile Settings")]
         [SerializeField] private ProjectileData _projectileData;
 
         public string Description => _description;
         public float FireRate => _fireRate;
+        public string FireSoundName => _fireSoundName;
         public ProjectileData ProjectileData => _projectileData;
     }
 }

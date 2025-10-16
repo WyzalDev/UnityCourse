@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _percentPerHit: 0.05
   _damagePercent: 2.5
+  _ultimateReadySoundName: UltimateReady
+  _ultimateUsedSoundName: UltimateUsed

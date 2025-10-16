@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Audio.Managers;
 using UI.Data;
 using UI.Managers;
 
@@ -34,6 +35,7 @@ namespace UI.Views.Game
             }
 
             base.Show(data);
+            AudioManager.PlaySfx("Loose");
         }
 
         private void OnRestartButtonClicked()

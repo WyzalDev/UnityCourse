@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using Audio.Managers;
 using Core.Data;
 using Core.Managers;
 
@@ -11,6 +12,7 @@ namespace Core.Turrets
     public class Projectile : MonoBehaviour, IInitializable
     {
         [SerializeField] private ParticleSystem _hitEffect;
+        [SerializeField] private string _hitSoundName;
 
         private Rigidbody2D _rigidbody;
         private float _speed;
@@ -55,6 +57,7 @@ namespace Core.Turrets
                 return;
 
             Instantiate(_hitEffect, transform.position, transform.rotation);
+            AudioManager.PlaySfxWithPitch(_hitSoundName);
             damageable.TakeDamage(_damage);
             ProjectilesManager.DestroyProjectile(this, other.collider.CompareTag("Enemy"));
         }

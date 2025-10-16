@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using UnityEngine;
+using Audio.Managers;
 using Core.Data;
 using Core.Data.TurretTypes;
 
@@ -15,6 +16,7 @@ namespace Core.Turrets
         protected BaseTurretConfig BaseTurretConfig;
 
         private float _fireRate;
+        private string _fireSoundName;
         private float _difficultMultiplier;
         private float _currentFireCooldown;
         private bool _isFiring;
@@ -36,6 +38,7 @@ namespace Core.Turrets
         protected virtual void OnConfigUpdated()
         {
             _fireRate = BaseTurretConfig.FireRate;
+            _fireSoundName = BaseTurretConfig.FireSoundName;
             _projectileData = new ProjectileData()
             {
                 Prefab = BaseTurretConfig.ProjectileData.Prefab,
@@ -66,6 +69,7 @@ namespace Core.Turrets
             {
                 _currentFireCooldown = _fireRate;
                 Fire();
+                AudioManager.PlaySfxWithPitch(_fireSoundName);
             }
         }
 
