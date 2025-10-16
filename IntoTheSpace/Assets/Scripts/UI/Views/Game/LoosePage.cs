@@ -1,9 +1,9 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UI.Data;
 using UI.Managers;
 

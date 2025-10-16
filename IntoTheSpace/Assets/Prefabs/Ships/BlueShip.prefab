@@ -20,6 +20,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueShip
       objectReference: {fileID: 0}
+    - target: {fileID: 6476851322568890807, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476851322568890807, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476851322568890807, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 7502717635547991731, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
       propertyPath: _shipData
       value: 

@@ -20,6 +20,7 @@ namespace Core
 
         public Action OnDamageTaken { get; set; }
 
+        public ShipConfig ShipConfig => shipConfig;
         public IInitializable Movement { get; private set; }
         public IInitializable Turret { get; private set; }
         public IInitializable Ultimate { get; private set; }

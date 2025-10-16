@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Core.Data;
 using Core.Records;
 using UI.Data;
@@ -21,12 +22,13 @@ namespace Core.Managers
         [SerializeField] private HUDManager _hudManager;
         [SerializeField] private Button _pauseButton;
         [SerializeField] private List<GameObject> _controllables;
-        [SerializeField] private Ship _playerShipPrefab;
+        [SerializeField] private Ship _playerDefaultShipPrefab;
         [SerializeField] private Transform _playerSpawnPoint;
         [SerializeField] private float _endGameUIDelay;
 
         private List<IPausable> _pausables;
         private List<IRestorable> _restorables;
+        private Ship _playerShipPrefab;
         private Ship _playerShip;
         private WaitForSecondsRealtime _cachedEndGameUIDelay;
 
@@ -37,6 +39,8 @@ namespace Core.Managers
 
             _pausables = new List<IPausable>();
             _restorables = new List<IRestorable>();
+
+            _playerShipPrefab = GameStartData.ChosenShip != null ? GameStartData.ChosenShip : _playerDefaultShipPrefab;
 
             SpawnPlayer();
 
@@ -111,7 +115,8 @@ namespace Core.Managers
 
         private void BackToMenu()
         {
-            //TODO load menu scene when it would be implemented
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("MainMenu");
         }
 
         private void RestoreGame()

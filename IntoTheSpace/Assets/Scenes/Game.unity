@@ -360,7 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilesParent: {fileID: 55598403}
   _enemyManager: {fileID: 1540212533}
-  _hitEffect: {fileID: 932224901116202059, guid: e478a1a7a512eb24f859c422e3b9d6dd, type: 3}
 --- !u!1 &360715544
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +959,9 @@ MonoBehaviour:
   - {fileID: 1696648926}
   - {fileID: 1313742997}
   - {fileID: 1008572800}
-  _playerShipPrefab: {fileID: 7502717635547991731, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+  - {fileID: 180074099530477716}
+  _playerRedShipPrefab: {fileID: 7502717635547991731, guid: 25dc41cbaa536834ab3bfb26873c6778, type: 3}
+  _playerBlueShipPrefab: {fileID: 6849410425618898647, guid: 94b0456cc33181b4faa01a39d61bde35, type: 3}
   _playerSpawnPoint: {fileID: 2087310778}
   _endGameUIDelay: 1
 --- !u!1 &1080009263
@@ -1851,12 +1852,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2606264083895508878, guid: c988552b297fdc24f91c0ba81f4c60d1, type: 3}
   m_PrefabInstance: {fileID: 180074099530477714}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 180074099530477716}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3b2c369434f45abb423da75318a16a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &180074099530477716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3606599747450994658, guid: c988552b297fdc24f91c0ba81f4c60d1, type: 3}
+  m_PrefabInstance: {fileID: 180074099530477714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &447445619707169608
 PrefabInstance:
   m_ObjectHideFlags: 0
