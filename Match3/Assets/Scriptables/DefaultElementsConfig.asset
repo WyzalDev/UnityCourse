@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6d78fa720c4c3b93eb80c4b430533f, type: 3}
+  m_Name: DefaultElementsConfig
+  m_EditorClassIdentifier: 
+  _elementViewPrefab: {fileID: 2636782563204008064, guid: 69854e129873fe947847a9871b7f6451, type: 3}
+  _elementConfigs:
+  - _elementType: 1
+    _sprite: {fileID: 21300000, guid: b7481a4c424715542a70ac1efc7468db, type: 3}
+  - _elementType: 2
+    _sprite: {fileID: 21300000, guid: 50dd2e8acaa7426438d693e39eb73026, type: 3}
+  - _elementType: 3
+    _sprite: {fileID: 21300000, guid: 23c39604c54f9f944ac7791b186f3dce, type: 3}
+  - _elementType: 4
+    _sprite: {fileID: 21300000, guid: a292bddf8693e00428dace4a7f770aa6, type: 3}
+  - _elementType: 5
+    _sprite: {fileID: 21300000, guid: 140169fe467b8b649aa2541e0c8d6c09, type: 3}
+  - _elementType: 6
+    _sprite: {fileID: 21300000, guid: 6d9dc0d57ae754744bdaa8d353d634b0, type: 3}
+  - _elementType: 7
+    _sprite: {fileID: 21300000, guid: c07f2868d820def41be838b6264d4111, type: 3}
+  - _elementType: 8
+    _sprite: {fileID: 21300000, guid: 5440dfb041fe4f64abd5cdf80cb0cbb5, type: 3}
+  - _elementType: 9
+    _sprite: {fileID: 21300000, guid: 90c26a624ba4c4b40aab0c5770ca8849, type: 3}
+  - _elementType: 10
+    _sprite: {fileID: 21300000, guid: 1ba898d0d6386664ca8fd02b3c74a97f, type: 3}
+  - _elementType: 11
+    _sprite: {fileID: 21300000, guid: d35dee60e2243514abb90ae99fe7d293, type: 3}
+  _backgroundElementConfigs:
+  - _backgroundElementType: 1
+    _possibleSprites:
+    - {fileID: -150932438, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 2
+    _possibleSprites:
+    - {fileID: 1938491678, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 1925913862, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 110652184, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 3
+    _possibleSprites:
+    - {fileID: -386548546, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 4
+    _possibleSprites:
+    - {fileID: -469043364, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: -1792212065, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 260684189, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 5
+    _possibleSprites:
+    - {fileID: 1204059507, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: -530059537, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 6
+    _possibleSprites:
+    - {fileID: 1290473257, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 1192542154, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 1107360545, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 7
+    _possibleSprites:
+    - {fileID: 423993332, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 8
+    _possibleSprites:
+    - {fileID: 1358186962, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: 394525933, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+    - {fileID: -421207572, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 9
+    _possibleSprites:
+    - {fileID: 922021148, guid: 706cd40c7ea18214d87d5a81045cc4af, type: 3}
+  - _backgroundElementType: 10
+    _possibleSprites:
+    - {fileID: 21300000, guid: 25101480b1556e94ebb7c885853b692a, type: 3}
+  _animationSpritePrefab: {fileID: 6752805021854763456, guid: 2fde28c21bfca584993a8745665eeda5, type: 3}
+  _destroyGemsAnimationDuration: 0.75
+  _moveGemsAnimationDuration: 0.5
+  _rocketChainSize: 5
+  _bombChainSize: 8
