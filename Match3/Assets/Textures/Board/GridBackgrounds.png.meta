@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: 706cd40c7ea18214d87d5a81045cc4af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7467582679543334082
+    second: GridBackgrounds 1_0
+  - first:
+      213: -8409313380890205686
+    second: GridBackgrounds 1_1
+  - first:
+      213: -518872206330082939
+    second: GridBackgrounds 1_2
+  - first:
+      213: 2184914475771948316
+    second: GridBackgrounds 1_3
+  - first:
+      213: -9221464641945905422
+    second: GridBackgrounds 1_4
+  - first:
+      213: -2657065523211147971
+    second: GridBackgrounds 1_5
+  - first:
+      213: -8033693731701900018
+    second: GridBackgrounds 1_6
+  - first:
+      213: 4149086117191720543
+    second: GridBackgrounds 1_7
+  - first:
+      213: -3130227977010342959
+    second: GridBackgrounds 1_8
+  - first:
+      213: -897229284531100358
+    second: GridBackgrounds 1_9
+  - first:
+      213: -6970935793973561778
+    second: GridBackgrounds 1_10
+  - first:
+      213: 1881428013897554081
+    second: GridBackgrounds 1_11
+  - first:
+      213: -7101727407483784265
+    second: GridBackgrounds 1_12
+  - first:
+      213: -5133626820664344886
+    second: GridBackgrounds 1_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 115
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GridBackgrounds_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1955
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2e34b4f21a47941a5d167ba92f40d3
+      internalID: -150932438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1840
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a1354d170d5074ab49569ff44a362d
+      internalID: 1938491678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1725
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9aa3f62e79fbf44b374728d4ca4bbf
+      internalID: 1925913862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1610
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c33e950ae91b714c8e96b154db89785
+      internalID: 110652184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1495
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d448fac93a9301846b35e776ad693e15
+      internalID: -386548546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1380
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0955c996420afb941a9fccc5d5a67461
+      internalID: -469043364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1265
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5691d862888d7ce4e8d0bf4cca3c8fd4
+      internalID: 1204059507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1150
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7bcafd0824ace45901cc9a7e4291f9
+      internalID: 1290473257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1035
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b3550b5a4effb49b2acb6e325566f2
+      internalID: -1792212065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 920
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609f17148fc3c9b40bde9a8a9dfd43b0
+      internalID: -530059537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 805
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ab3bbe2fc348d4897d6241ae6dde4d
+      internalID: 1192542154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedc210fca1cfa34b90b290f8c5d28a4
+      internalID: 260684189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64524441c789be34eb8df00d5413c41e
+      internalID: 1107360545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbc4cc8020f085468f4664caaa77a95
+      internalID: 423993332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 345
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907c74a5a5641454dbb00d7c497e41c0
+      internalID: 1358186962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b229b9f9476d14e8af24ece088b5fa
+      internalID: 394525933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c02deb7ebd9edd47baaf304d929382a
+      internalID: -421207572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridBackgrounds_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27d7740cf71fa14782d32411518c8e7
+      internalID: 922021148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c00ae9579554b6a42981bc3a321234fd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GridBackgrounds_0: -150932438
+      GridBackgrounds_1: 1938491678
+      GridBackgrounds_10: 1192542154
+      GridBackgrounds_11: 260684189
+      GridBackgrounds_12: 1107360545
+      GridBackgrounds_13: 423993332
+      GridBackgrounds_14: 1358186962
+      GridBackgrounds_15: 394525933
+      GridBackgrounds_16: -421207572
+      GridBackgrounds_17: 922021148
+      GridBackgrounds_2: 1925913862
+      GridBackgrounds_3: 110652184
+      GridBackgrounds_4: -386548546
+      GridBackgrounds_5: -469043364
+      GridBackgrounds_6: 1204059507
+      GridBackgrounds_7: 1290473257
+      GridBackgrounds_8: -1792212065
+      GridBackgrounds_9: -530059537
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
