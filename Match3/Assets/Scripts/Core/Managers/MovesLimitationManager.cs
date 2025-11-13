@@ -22,7 +22,7 @@ namespace Core.Managers
             _requiredMovesLimitation = movesLimitation;
             _currentMovesLimitation = 0;
 
-            movesLimitationText.text = $"{_currentMovesLimitation} / {_requiredMovesLimitation}";
+            movesLimitationText.text = $"{_requiredMovesLimitation - _currentMovesLimitation}";
             IsMovesLimitationAchieved = false;
         }
 
@@ -37,7 +37,7 @@ namespace Core.Managers
                 return;
 
             _currentMovesLimitation++;
-            movesLimitationText.text = $"{_currentMovesLimitation} / {_requiredMovesLimitation}";
+            movesLimitationText.text = $"{_requiredMovesLimitation - _currentMovesLimitation}";;
             IsMovesLimitationAchieved = _currentMovesLimitation >= _requiredMovesLimitation;
         }
 
@@ -49,7 +49,7 @@ namespace Core.Managers
         public void Restore()
         {
             _currentMovesLimitation = 0;
-            movesLimitationText.text = $"{_currentMovesLimitation} / {_requiredMovesLimitation}";
+            movesLimitationText.text = $"{_requiredMovesLimitation - _currentMovesLimitation}";;
             IsMovesLimitationAchieved = false;
         }
     }

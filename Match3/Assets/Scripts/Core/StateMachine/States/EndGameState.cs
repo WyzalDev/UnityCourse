@@ -19,6 +19,7 @@ namespace Core.StateMachine.States
         public override void Enter()
         {
             base.Enter();
+
             _endGameAction?.Invoke();
         }
     }

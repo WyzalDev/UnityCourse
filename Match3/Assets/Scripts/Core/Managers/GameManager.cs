@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,9 @@ using Core.Grid;
 using Core.StateMachine;
 using Core.StateMachine.States;
 using Core.Utils;
+using UI.Data;
+using UI.Managers;
+using UI.Views.Game;
 
 namespace Core.Managers
 {
@@ -26,15 +30,13 @@ namespace Core.Managers
         [SerializeField] private Transform _gemAnimationsParent;
         [SerializeField] private GameConfig _gameConfig;
         [SerializeField] private Button _pauseButton;
-        [SerializeField] private Button _unpauseButton;
-        [SerializeField] private Button _restartButton;
 
         [SerializeField] private List<GameObject> _controllables;
 
         private FiniteStateMachine _finiteStateMachine;
         private FiniteStateMachineContext _stateMachineContext;
         private LevelConfig _levelConfig;
-        private WaitForSeconds _cachedEndGameDelayWait;
+        private WaitForSecondsRealtime _cachedEndGameDelayWait;
         private List<IPausable> _pausables;
         private List<IRestorable> _restorables;
 
@@ -42,10 +44,8 @@ namespace Core.Managers
 
         private void Start()
         {
-            _cachedEndGameDelayWait = new WaitForSeconds(_gameConfig.EndGameDelay);
-            _pauseButton.onClick.AddListener(PauseGame);
-            _unpauseButton.onClick.AddListener(UnpauseGame);
-            _restartButton.onClick.AddListener(RestartGame);
+            _cachedEndGameDelayWait = new WaitForSecondsRealtime(_gameConfig.EndGameDelay);
+            _pauseButton.onClick.AddListener(OnPauseButtonClicked);
 
             _pausables = new List<IPausable>();
             _restorables = new List<IRestorable>();
@@ -116,8 +116,17 @@ namespace Core.Managers
             RestoreGame();
             _finiteStateMachine.SetState<WaitingState>();
             UnpauseGame();
+        }
+        
+        private void OnPauseButtonClicked()
+        {
+            PageManager.Show<PausePage>(new GamePageData()
+            {
+                ButtonAction = UnpauseGame,
+                BackToMenuAction = BackToMenu
+            });
 
-            _restartButton.interactable = false;
+            PauseGame();
         }
 
         private void PauseGame()
@@ -128,7 +137,6 @@ namespace Core.Managers
             Time.timeScale = 0;
 
             _pauseButton.interactable = false;
-            _unpauseButton.interactable = true;
         }
 
         private void UnpauseGame()
@@ -139,7 +147,12 @@ namespace Core.Managers
             Time.timeScale = 1f;
 
             _pauseButton.interactable = true;
-            _unpauseButton.interactable = false;
+        }
+
+        private void BackToMenu()
+        {
+            //Time.timeScale = 1f;
+            //load menu scene
         }
 
         private void RestoreGame()
@@ -150,15 +163,30 @@ namespace Core.Managers
 
         private void EndGame()
         {
-            _restartButton.interactable = true;
             PauseGame();
+            
+            StartCoroutine(ShowEndGameUI());
+        }
+
+        private IEnumerator ShowEndGameUI()
+        {
+            yield return _cachedEndGameDelayWait;
+
+            var pageData = new GamePageData()
+            {
+                ButtonAction = RestartGame,
+                BackToMenuAction = BackToMenu
+            };
+
+            if (_goalsManager.IsGoalAchieved)
+                PageManager.Show<WinPage>(pageData);
+            else
+                PageManager.Show<LoosePage>(pageData);
         }
 
         private void OnDestroy()
         {
-            _pauseButton.onClick.RemoveListener(PauseGame);
-            _unpauseButton.onClick.RemoveListener(UnpauseGame);
-            _restartButton.onClick.RemoveListener(RestartGame);
+            _pauseButton.onClick.RemoveListener(OnPauseButtonClicked);
         }
     }
 }

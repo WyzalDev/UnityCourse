@@ -27,7 +27,7 @@ MonoBehaviour:
   - _elementType: 6
     _sprite: {fileID: 21300000, guid: 6d9dc0d57ae754744bdaa8d353d634b0, type: 3}
   - _elementType: 7
-    _sprite: {fileID: 21300000, guid: c07f2868d820def41be838b6264d4111, type: 3}
+    _sprite: {fileID: 21300000, guid: e6fffc4b1936ef14ab6dc6e6efaebac2, type: 3}
   - _elementType: 8
     _sprite: {fileID: 21300000, guid: 5440dfb041fe4f64abd5cdf80cb0cbb5, type: 3}
   - _elementType: 9

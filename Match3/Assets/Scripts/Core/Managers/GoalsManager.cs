@@ -9,9 +9,16 @@ namespace Core.Managers
 {
     public class GoalsManager : MonoBehaviour, IRestorable
     {
-        [SerializeField] private Image _elementGoalSpriteRenderer;
-        [SerializeField] private Slider _scoreSlider;
+        [SerializeField] private Transform _elementGoalParent;
+        [SerializeField] private Transform _scoreGoalParent;
+        
+        [Header("Element Goal")]
+        [SerializeField] private Image _elementGoalImage;
         [SerializeField] private TMP_Text _goalText;
+
+        [Header("Score Goal")]
+        [SerializeField] private Slider _scoreSlider;
+        [SerializeField] private TMP_Text _scoreText;
 
         private GoalType _goalType;
         private ElementType _elementType;
@@ -33,25 +40,26 @@ namespace Core.Managers
                 case GoalType.GetScore:
                     _scoreMultiplier = config.ScoreMultiplier;
 
-                    _elementGoalSpriteRenderer.gameObject.SetActive(false);
-                    _scoreSlider.gameObject.SetActive(true);
+                    _elementGoalParent.gameObject.SetActive(false);
+                    _scoreGoalParent.gameObject.SetActive(true);
 
-                    _scoreSlider.value = _currentValue;
                     _scoreSlider.minValue = 0;
                     _scoreSlider.maxValue = _requiredValue;
+                    _scoreSlider.value = _currentValue;
+                    _scoreText.text = _currentValue.ToString();
 
                     break;
                 case GoalType.DestroyGems or GoalType.DestroyObstacles:
                     _scoreMultiplier = 1;
 
-                    _scoreSlider.gameObject.SetActive(false);
-                    _elementGoalSpriteRenderer.gameObject.SetActive(true);
+                    _scoreGoalParent.gameObject.SetActive(false);
+                    _elementGoalParent.gameObject.SetActive(true);
 
-                    _elementGoalSpriteRenderer.sprite = elementSprite;
+                    _elementGoalImage.sprite = elementSprite;
+                    _goalText.text = $"{_currentValue} / {_requiredValue}";
+
                     break;
             }
-
-            _goalText.text = $"{_currentValue} / {_requiredValue}";
         }
 
         public void TryAddGoalScore(ElementType elementType)
@@ -62,15 +70,20 @@ namespace Core.Managers
             switch (_goalType)
             {
                 case GoalType.DestroyObstacles or GoalType.DestroyGems when elementType == _elementType:
-                case GoalType.GetScore when elementType.IsGem():
                 {
                     _currentValue += _scoreMultiplier;
-                    _scoreSlider.value = _currentValue;
                     _goalText.text = $"{_currentValue} / {_requiredValue}";
                     IsGoalAchieved = _currentValue >= _requiredValue;
 
                     break;
                 }
+                case GoalType.GetScore when elementType.IsGem():
+                    _currentValue += _scoreMultiplier;
+                    _scoreSlider.value = _currentValue;
+                    _scoreText.text = _currentValue.ToString();
+                    IsGoalAchieved = _currentValue >= _requiredValue;
+
+                    break;
             }
         }
 
@@ -81,6 +94,7 @@ namespace Core.Managers
                 _scoreSlider.value = _currentValue;
 
             _goalText.text = $"{_currentValue} / {_requiredValue}";
+            _scoreText.text = _currentValue.ToString();
             IsGoalAchieved = false;
         }
     }
