@@ -13,6 +13,18 @@ namespace Core.Data
         [SerializeField] private int _seed;
         [SerializeField] private FieldConfig _fieldConfig;
 
+        public LevelConfig(int movesLimitation, int seed, GoalsConfig goalsConfig, FieldConfig fieldConfig)
+        {
+            _movesLimitation = movesLimitation;
+            _seed = seed;
+            _goalsConfig = goalsConfig;
+            _fieldConfig = fieldConfig;
+        }
+
+        public LevelConfig()
+        {
+        }
+
         public GoalsConfig GoalsConfig => _goalsConfig;
 
         public int MovesLimitation => _movesLimitation;
