@@ -13,6 +13,18 @@ namespace Core.Data
         [SerializeField] private int _scoreMultiplier;
         [SerializeField] private ElementType _goalElementType;
 
+        public GoalsConfig(int requiredValue, GoalType goalType, int scoreMultiplier, ElementType goalElementType)
+        {
+            _requiredValue = requiredValue;
+            _goalType = goalType;
+            _scoreMultiplier = scoreMultiplier;
+            _goalElementType = goalElementType;
+        }
+
+        public GoalsConfig()
+        {
+        }
+
         public int RequiredValue => _requiredValue;
 
         public GoalType GoalType => _goalType;
