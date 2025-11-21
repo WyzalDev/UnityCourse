@@ -222,3 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundSpriteRenderer: {fileID: 4422750700978031456}
   _elementSpriteRenderer: {fileID: 545053875726048859}
+  _selectedElementSize: {x: 0.8, y: 0.8}
+  _defaultElementSize: {x: 1, y: 1}
+  _selectedElementColor: {r: 0.395, g: 0.395, b: 0.395, a: 1}
+  _defaultElementColor: {r: 1, g: 1, b: 1, a: 1}

@@ -11,7 +11,7 @@ namespace Core.Managers
     {
         [SerializeField] private Transform _elementGoalParent;
         [SerializeField] private Transform _scoreGoalParent;
-        
+
         [Header("Element Goal")]
         [SerializeField] private Image _elementGoalImage;
         [SerializeField] private TMP_Text _goalText;
@@ -19,6 +19,11 @@ namespace Core.Managers
         [Header("Score Goal")]
         [SerializeField] private Slider _scoreSlider;
         [SerializeField] private TMP_Text _scoreText;
+
+        [Header("Goal Animation")]
+        [SerializeField] private ParticleSystem _goalAchievedEffect;
+        [SerializeField] private Vector2 _effectSpawnPoint;
+        [SerializeField] private Transform _effectsContainer;
 
         private GoalType _goalType;
         private ElementType _elementType;
@@ -85,6 +90,16 @@ namespace Core.Managers
 
                     break;
             }
+
+            if (IsGoalAchieved)
+                Instantiate(_goalAchievedEffect, new Vector2(_effectSpawnPoint.x, _effectSpawnPoint.y),
+                    Quaternion.identity, _effectsContainer);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(_effectSpawnPoint, 1f);
         }
 
         public void Restore()

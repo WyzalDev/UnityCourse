@@ -10,6 +10,12 @@ namespace Core.Grid
         [SerializeField] private SpriteRenderer _backgroundSpriteRenderer;
         [SerializeField] private SpriteRenderer _elementSpriteRenderer;
 
+        [Header("Animation Settings")]
+        [SerializeField] private Vector2 _selectedElementSize;
+        [SerializeField] private Vector2 _defaultElementSize;
+        [SerializeField] private Color _selectedElementColor;
+        [SerializeField] private Color _defaultElementColor;
+
         public Element Element { get; private set; }
 
         public float Width => _elementSpriteRenderer.sprite.bounds.size.x;
@@ -26,6 +32,18 @@ namespace Core.Grid
         public void UpdateView(Sprite sprite)
         {
             _elementSpriteRenderer.sprite = sprite;
+        }
+
+        public void PlaySelect()
+        {
+            transform.localScale = _selectedElementSize;
+            _elementSpriteRenderer.color = _selectedElementColor;
+        }
+
+        public void PlayDeselect()
+        {
+            transform.localScale = _defaultElementSize;
+            _elementSpriteRenderer.color = _defaultElementColor;
         }
 
         public Tween DestroyAnimation(float duration)

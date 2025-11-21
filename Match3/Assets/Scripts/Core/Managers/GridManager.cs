@@ -113,7 +113,7 @@ namespace Core.Managers
 
             foreach (var bonus in bonuses)
             {
-                _grid.ActivateBonusAndGetAffectedElementsCount(tryAddGoalScoreAction, bonus, out var affectedObstacles);
+                _grid.ActivateBonusAndGetAffectedObstacles(tryAddGoalScoreAction, bonus, out var affectedObstacles);
 
                 foreach (var affectedObstacle in affectedObstacles)
                     obstacles.Add(affectedObstacle);
@@ -163,6 +163,11 @@ namespace Core.Managers
         public Element GetElement(int x, int y)
         {
             return IsElementExistsOnCoords(x, y) ? _grid.Grid[x][y] : null;
+        }
+
+        public ElementView GetElementView(int x, int y)
+        {
+            return IsElementExistsOnCoords(x, y) ? _gridView.GetElementViewByPosition(x, y) : null; 
         }
 
         private bool IsElementExistsOnCoords(int x, int y)

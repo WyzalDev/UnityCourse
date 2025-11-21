@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: 25877c0450f95cb4ba9515142d4d6808
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8564863758876549375
+    second: BombEffect_0
+  - first:
+      213: 2727003353806129478
+    second: BombEffect_1
+  - first:
+      213: 5290685423079970445
+    second: BombEffect_2
+  - first:
+      213: 3442717188639396926
+    second: BombEffect_3
+  - first:
+      213: 4884700592309694519
+    second: BombEffect_4
+  - first:
+      213: 444528048847249528
+    second: BombEffect_5
+  - first:
+      213: -6648083276122973468
+    second: BombEffect_6
+  - first:
+      213: 7920204599904758500
+    second: BombEffect_7
+  - first:
+      213: 5420271503418689311
+    second: BombEffect_8
+  - first:
+      213: -419365717445448715
+    second: BombEffect_9
+  - first:
+      213: -4275929942169665694
+    second: BombEffect_10
+  - first:
+      213: 7298652755322963908
+    second: BombEffect_11
+  - first:
+      213: -6771853502290361440
+    second: BombEffect_12
+  - first:
+      213: -2862507391435952315
+    second: BombEffect_13
+  - first:
+      213: 4061334128498208273
+    second: BombEffect_14
+  - first:
+      213: 5530514368010031508
+    second: BombEffect_15
+  - first:
+      213: -7453945340819089246
+    second: BombEffect_16
+  - first:
+      213: 533108091584927276
+    second: BombEffect_17
+  - first:
+      213: 3042864392953334451
+    second: BombEffect_18
+  - first:
+      213: 6983102395984091848
+    second: BombEffect_19
+  - first:
+      213: -9134454189435386859
+    second: BombEffect_20
+  - first:
+      213: -5165206753072848580
+    second: BombEffect_21
+  - first:
+      213: -5984129647076628411
+    second: BombEffect_22
+  - first:
+      213: 3734193851538095644
+    second: BombEffect_23
+  - first:
+      213: -288800033810372587
+    second: BombEffect_24
+  - first:
+      213: -1948861981689967653
+    second: BombEffect_25
+  - first:
+      213: 5211424830004490779
+    second: BombEffect_26
+  - first:
+      213: 3857108393448200421
+    second: BombEffect_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BombEffect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff02479c5328cd670800000000000000
+      internalID: 8564863758876549375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BombEffect_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649c9ec1a1348d520800000000000000
+      internalID: 2727003353806129478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BombEffect_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86d40d6c5a4c6940800000000000000
+      internalID: 5290685423079970445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BombEffect_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e349bf2fa0df6cf20800000000000000
+      internalID: 3442717188639396926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a21d0995888ebc94897017c24ab39794
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BombEffect_0: 8564863758876549375
+      BombEffect_1: 2727003353806129478
+      BombEffect_2: 5290685423079970445
+      BombEffect_3: 3442717188639396926
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

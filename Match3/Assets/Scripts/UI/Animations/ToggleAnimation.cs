@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-namespace UI
+namespace UI.Animations
 {
     [RequireComponent(typeof(Toggle))]
     public class ToggleAnimation : MonoBehaviour
