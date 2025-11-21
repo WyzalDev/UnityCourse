@@ -34,8 +34,7 @@ namespace Core.StateMachine.States
 
         private void TryChangeElementInChain()
         {
-            if (_chainManager.TryChangeElementInChain(SelectedElement.Element))
-                _chainManager.UpdateLineRenderer();
+            _chainManager.TryChangeElementInChain(SelectedElement.Element);
         }
 
         private void EndChain(InputAction.CallbackContext ctx)

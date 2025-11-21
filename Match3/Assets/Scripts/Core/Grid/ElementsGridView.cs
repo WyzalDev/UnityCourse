@@ -218,6 +218,11 @@ namespace Core.Grid
                 elementView.UpdateView(sprite);
         }
 
+        public ElementView GetElementViewByPosition(int x, int y)
+        {
+            return _viewsDictionary[new Vector2Int(x, y)];
+        }
+
         public void DestroyGemsAnimation()
         {
             _destroyGemsSequence = DOTween.Sequence();

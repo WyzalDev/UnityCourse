@@ -25,7 +25,6 @@ namespace Core.Managers
         [SerializeField] private MovesLimitationManager _movesLimitationManager;
         [SerializeField] private Transform _gridParent;
         [SerializeField] private ElementsConfig _elementsConfig;
-        [SerializeField] private LineRenderer _chainLineRenderer;
         [SerializeField] private CoroutineHolder _coroutineHolder;
         [SerializeField] private Transform _gemAnimationsParent;
         [SerializeField] private GameConfig _gameConfig;

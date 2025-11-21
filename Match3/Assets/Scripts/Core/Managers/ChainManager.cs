@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Data;
 using Core.Grid;
-using Core.Utils;
 
 namespace Core.Managers
 {
     public class ChainManager : MonoBehaviour
     {
         [SerializeField] private GridManager _gridManager;
-        [SerializeField] private LineRenderer _chainLineRenderer;
 
         private LinkedList<Element> _chainElements = new();
         private bool _isChainStarted;
@@ -32,8 +30,7 @@ namespace Core.Managers
 
             _isChainStarted = true;
             _chainElements.AddLast(SelectedElement.Element);
-            UpdateLineRenderer();
-            _chainLineRenderer.enabled = true;
+            _gridManager.GetElementView(SelectedElement.Element.X, SelectedElement.Element.Y).PlaySelect();
             return true;
         }
 
@@ -48,6 +45,7 @@ namespace Core.Managers
 
             if (PreviousElement != null && PreviousElement.X == element.X && PreviousElement.Y == element.Y)
             {
+                _gridManager.GetElementView(CurrentElement.X, CurrentElement.Y).PlayDeselect();
                 _chainElements.RemoveLast();
                 return true;
             }
@@ -56,22 +54,8 @@ namespace Core.Managers
                 return false;
 
             _chainElements.AddLast(element);
+            _gridManager.GetElementView(element.X, element.Y).PlaySelect();
             return true;
-        }
-
-        public void UpdateLineRenderer()
-        {
-            _chainLineRenderer.positionCount = _chainElements.Count;
-
-            var i = 0;
-
-            foreach (var chainElement in _chainElements)
-            {
-                _chainLineRenderer.SetPosition(i,
-                    ViewModelCoordinatesConverter.GetViewCoordinates(chainElement.X, chainElement.Y));
-
-                i++;
-            }
         }
 
         public void Restore()
@@ -82,7 +66,9 @@ namespace Core.Managers
 
         public bool EndChain()
         {
-            _chainLineRenderer.enabled = false;
+            foreach (var chainElement in _chainElements)
+                _gridManager.GetElementView(chainElement.X, chainElement.Y).PlayDeselect();
+
             return _chainElements.Count >= 3;
         }
     }

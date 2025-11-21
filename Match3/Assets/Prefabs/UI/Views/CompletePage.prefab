@@ -418,6 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _restartButton: {fileID: 1059221448377383286}
   _backToMenuButton: {fileID: 4191596841124592176}
+  _popupText: {fileID: 6060608508447791644, guid: 49add37f09bf58544aedc3b51af70f78, type: 3}
+  _popupTransform: {fileID: 1059221449573548162}
 --- !u!1 &7305235043070402102
 GameObject:
   m_ObjectHideFlags: 0

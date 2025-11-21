@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Data;
+using Core.Managers;
 using Core.Utils;
 
 namespace Core.Grid
@@ -12,6 +13,8 @@ namespace Core.Grid
     public class ElementsGrid
     {
         private ElementTypesGenerator _generator;
+
+        private const int BombSize = 2;
 
         public Element[][] Grid { get; private set; }
 
@@ -36,7 +39,7 @@ namespace Core.Grid
             _generator = generator;
         }
 
-        public void ActivateBonusAndGetAffectedElementsCount(Action<ElementType> tryAddGoalScoreAction, Element bonus,
+        public void ActivateBonusAndGetAffectedObstacles(Action<ElementType> tryAddGoalScoreAction, Element bonus,
             out HashSet<Element> affectedObstacles)
         {
             affectedObstacles = new HashSet<Element>();
@@ -62,13 +65,15 @@ namespace Core.Grid
                         Grid[bonus.X][j].SetElementType(ElementType.None);
                     }
 
+                    EffectManager.SpawnRocketEffect(bonus.X);
+
                     break;
 
                 case ElementType.Bomb:
-                    var startI = Mathf.Clamp(bonus.X - 2, 0, Height - 1);
-                    var endI = Mathf.Clamp(bonus.X + 2, 0, Height - 1);
-                    var startJ = Mathf.Clamp(bonus.Y - 2, 0, Width - 1);
-                    var endJ = Mathf.Clamp(bonus.Y + 2, 0, Width - 1);
+                    var startI = Mathf.Clamp(bonus.X - BombSize, 0, Height - 1);
+                    var endI = Mathf.Clamp(bonus.X + BombSize, 0, Height - 1);
+                    var startJ = Mathf.Clamp(bonus.Y - BombSize, 0, Width - 1);
+                    var endJ = Mathf.Clamp(bonus.Y + BombSize, 0, Width - 1);
 
                     for (var i = startI; i <= endI; i++)
                     {
@@ -90,6 +95,8 @@ namespace Core.Grid
                             Grid[i][j].SetElementType(ElementType.None);
                         }
                     }
+
+                    EffectManager.SpawnBombEffect(bonus.X, bonus.Y, BombSize);
 
                     break;
             }
