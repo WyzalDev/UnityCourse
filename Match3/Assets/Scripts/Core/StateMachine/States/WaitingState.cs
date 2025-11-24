@@ -1,5 +1,6 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
+using System.Collections.Generic;
 using Core.Data;
 using Core.Managers;
 using Core.Utils;
@@ -8,7 +9,7 @@ using UnityEngine.InputSystem;
 
 namespace Core.StateMachine.States
 {
-    public class WaitingState : State
+    public class WaitingState : State, IPausable
     {
         private GridManager _gridManager;
         private ChainManager _chainManager;
@@ -18,9 +19,14 @@ namespace Core.StateMachine.States
         private InputAction _cursorPositionAction;
         private Camera _camera;
 
+        public bool IsPaused { get; set; }
+
         public override void Initialize(FiniteStateMachine finiteStateMachine, object initializeData)
         {
             base.Initialize(finiteStateMachine, initializeData);
+
+            if (initializeData is List<IPausable> pausables)
+                pausables.Add(this);
 
             _gridManager = finiteStateMachine.Context.GridManager;
             _chainManager = finiteStateMachine.Context.ChainManager;
@@ -42,6 +48,9 @@ namespace Core.StateMachine.States
 
         private void HandleInteractAction(InputAction.CallbackContext ctx)
         {
+            if (IsPaused)
+                return;
+
             var cursorPosition = _cursorPositionAction.ReadValue<Vector2>();
             var worldCursorPosition = _camera.ScreenToWorldPoint(cursorPosition);
             var modelCoordinates = ViewModelCoordinatesConverter.GetModelCoordinates(worldCursorPosition);
