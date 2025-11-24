@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Core.Data;
 using Core.Grid;
@@ -11,6 +12,7 @@ using Core.StateMachine;
 using Core.StateMachine.States;
 using Core.Utils;
 using UI.Data;
+using UI.LevelSelection;
 using UI.Managers;
 using UI.Views.Game;
 
@@ -39,8 +41,6 @@ namespace Core.Managers
         private List<IPausable> _pausables;
         private List<IRestorable> _restorables;
 
-        private const string LevelConfigPath = "Levels/TestLevel";
-
         private void Start()
         {
             _cachedEndGameDelayWait = new WaitForSecondsRealtime(_gameConfig.EndGameDelay);
@@ -60,10 +60,9 @@ namespace Core.Managers
                     _restorables.AddRange(restorables);
             }
 
-            var loadedConfig = Resources.Load<TextAsset>(LevelConfigPath);
             var gridView = InstantiateGridView(_gridParent);
 
-            _levelConfig = JsonUtility.FromJson<LevelConfig>(loadedConfig.text);
+            _levelConfig = LevelSelectionManager.GetSelectedLevelConfig();
 
             InitializeGridManager(gridView);
 
@@ -103,7 +102,7 @@ namespace Core.Managers
 
             _finiteStateMachine = new FiniteStateMachine("InGameFSM", _stateMachineContext);
 
-            _finiteStateMachine.AddState<WaitingState>(null);
+            _finiteStateMachine.AddState<WaitingState>(_pausables);
             _finiteStateMachine.AddState<InChainState>(null);
             _finiteStateMachine.AddState<FallingState>(null);
             _finiteStateMachine.AddState<SelectedBonusActivationState>(null);
@@ -150,8 +149,8 @@ namespace Core.Managers
 
         private void BackToMenu()
         {
-            //Time.timeScale = 1f;
-            //load menu scene
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Menu");
         }
 
         private void RestoreGame()
@@ -186,6 +185,7 @@ namespace Core.Managers
         private void OnDestroy()
         {
             _pauseButton.onClick.RemoveListener(OnPauseButtonClicked);
+            _finiteStateMachine.Unload();
         }
     }
 }

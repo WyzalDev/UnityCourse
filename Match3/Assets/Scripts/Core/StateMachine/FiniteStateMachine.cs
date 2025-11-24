@@ -45,5 +45,10 @@ namespace Core.StateMachine
             _currentState = newState;
             _currentState.Enter();
         }
+
+        public void Unload()
+        {
+            _currentState?.Exit();
+        }
     }
 }
