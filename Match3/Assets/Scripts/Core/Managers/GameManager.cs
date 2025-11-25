@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Audio.Managers;
 using Core.Data;
 using Core.Grid;
 using Core.StateMachine;
@@ -43,6 +44,8 @@ namespace Core.Managers
 
         private void Start()
         {
+            AudioManager.PlayMusic("GameMusic");
+
             _cachedEndGameDelayWait = new WaitForSecondsRealtime(_gameConfig.EndGameDelay);
             _pauseButton.onClick.AddListener(OnPauseButtonClicked);
 

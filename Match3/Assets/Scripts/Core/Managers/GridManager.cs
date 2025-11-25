@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using Audio.Managers;
 using Core.Data;
 using Core.Grid;
 using Core.Utils;
@@ -130,6 +131,7 @@ namespace Core.Managers
 
             if (spawningBonus != ElementType.None)
             {
+                AudioManager.PlaySfxWithPitch("BonusAppears");
                 startElement?.SetElementType(spawningBonus);
                 _gridView.UpdateElementView(startElement);
             }

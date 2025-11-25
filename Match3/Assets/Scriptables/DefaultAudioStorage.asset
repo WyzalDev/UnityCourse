@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3949ac60024f4da328f8182cc8c9d5, type: 3}
+  m_Name: DefaultAudioStorage
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: GameMusic
+    Clip: {fileID: 8300000, guid: 6cea72356f99c80478cfc29e22e72faa, type: 3}
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: 66467cc7603959446a6f9ed8e038d892, type: 3}
+  - Name: UIRichButtonPressed
+    Clip: {fileID: 8300000, guid: cebbca7b714efe84290c2e99d153e32a, type: 3}
+  - Name: UIButtonPressed
+    Clip: {fileID: 8300000, guid: 2282032c0d92aca4d96d8e640e0fa795, type: 3}
+  - Name: UITogglePressed
+    Clip: {fileID: 8300000, guid: e010327967eeaa24db5e02104c0f56f2, type: 3}
+  - Name: LevelComplete
+    Clip: {fileID: 8300000, guid: 1a1a4817654623549a942df11eb53093, type: 3}
+  - Name: Applause
+    Clip: {fileID: 8300000, guid: a3afa494eb6ed974e927ea1a435c6314, type: 3}
+  - Name: Loose
+    Clip: {fileID: 8300000, guid: e76dec290d5770d45a2110bcff14f576, type: 3}
+  - Name: LowMovesLeft
+    Clip: {fileID: 8300000, guid: d867d8aecadc85d4b859c7e288cf7f2d, type: 3}
+  - Name: MovesOver
+    Clip: {fileID: 8300000, guid: 58230cf1115e54d4c812f0140f4c6783, type: 3}
+  - Name: GoalAchieved
+    Clip: {fileID: 8300000, guid: 132c3325ca07414488975f35eb5dc8b1, type: 3}
+  - Name: BombActivation
+    Clip: {fileID: 8300000, guid: 35e5fbd65523db1418989fe335cb6f62, type: 3}
+  - Name: RocketActivation
+    Clip: {fileID: 8300000, guid: 053064089025dac42b94560c0e3a0ca2, type: 3}
+  - Name: BonusAppears
+    Clip: {fileID: 8300000, guid: 84b59389359622b4a9af6d970c9e52e8, type: 3}
+  - Name: RockCrush
+    Clip: {fileID: 8300000, guid: 70a805cb521b4d3429fc6d5b848acbcd, type: 3}
+  - Name: IceCrush
+    Clip: {fileID: 8300000, guid: 168e15b8a3cd1c446a8067ed3076bafb, type: 3}
+  - Name: AddToChain
+    Clip: {fileID: 8300000, guid: 9d2c98cfca6d5b64ba36ba16bba3f2e8, type: 3}
+  - Name: AddBonusToChain
+    Clip: {fileID: 8300000, guid: c01b6750dfa9c7e44b874446f3082cc2, type: 3}
+  - Name: RemoveFromChain
+    Clip: {fileID: 8300000, guid: aee82aa4f24f77d46bdf3cb91b4bee3e, type: 3}
+  - Name: RemoveFromChain
+    Clip: {fileID: 8300000, guid: aee82aa4f24f77d46bdf3cb91b4bee3e, type: 3}
+  - Name: MatchChain
+    Clip: {fileID: 8300000, guid: f09144a379a45bf419321ef0c0d72bc4, type: 3}

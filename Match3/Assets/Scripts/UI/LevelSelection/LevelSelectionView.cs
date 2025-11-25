@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Audio.Managers;
 
 namespace UI.LevelSelection
 {
@@ -12,6 +13,7 @@ namespace UI.LevelSelection
         [SerializeField] private TMP_Text _elementNumber;
         [SerializeField] private Image _selectedFade;
         [SerializeField] private Button _button;
+        [SerializeField] private string _clickButtonSFXName;
 
         public Action<LevelSelectionView> Clicked;
 
@@ -41,6 +43,7 @@ namespace UI.LevelSelection
         private void InvokeOnClick()
         {
             Clicked?.Invoke(this);
+            AudioManager.PlaySfxWithPitch(_clickButtonSFXName);
         }
 
         public void Unload()

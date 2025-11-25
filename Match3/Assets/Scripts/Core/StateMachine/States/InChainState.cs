@@ -1,8 +1,9 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
+using UnityEngine.InputSystem;
+using Audio.Managers;
 using Core.Data;
 using Core.Managers;
-using UnityEngine.InputSystem;
 
 namespace Core.StateMachine.States
 {
@@ -42,6 +43,7 @@ namespace Core.StateMachine.States
             if (!_chainManager.EndChain())
             {
                 _chainManager.Restore();
+                AudioManager.PlaySfxWithPitch("RemoveFromChain");
                 FiniteStateMachine.SetState<WaitingState>();
                 return;
             }
@@ -49,6 +51,7 @@ namespace Core.StateMachine.States
             _gridManager.MatchElements(_chainManager.ChainElements);
             _chainManager.Restore();
             _gridManager.DestroyGemsAnimation();
+            AudioManager.PlaySfxWithPitch("MatchChain");
             FiniteStateMachine.SetState<FallingState>();
         }
 

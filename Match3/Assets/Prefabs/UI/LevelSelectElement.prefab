@@ -138,6 +138,7 @@ MonoBehaviour:
   _elementNumber: {fileID: 6142044014519249489}
   _selectedFade: {fileID: 8055980607958221117}
   _button: {fileID: 8728035529626586849}
+  _clickButtonSFXName: UIButtonPressed
 --- !u!1 &6194364783089347002
 GameObject:
   m_ObjectHideFlags: 0

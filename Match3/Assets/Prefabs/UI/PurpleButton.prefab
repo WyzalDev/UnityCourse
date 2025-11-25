@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3789945480910420407}
   - component: {fileID: 3789945480910420404}
   - component: {fileID: 3789945480910420406}
+  - component: {fileID: 594264909396272295}
   m_Layer: 5
   m_Name: PurpleButton
   m_TagString: Untagged
@@ -197,6 +198,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &594264909396272295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789945480910420402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334cad156f8f46df9e8531fe81e3498d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 3789945480910420406}
 --- !u!1 &3789945481722621301
 GameObject:
   m_ObjectHideFlags: 0

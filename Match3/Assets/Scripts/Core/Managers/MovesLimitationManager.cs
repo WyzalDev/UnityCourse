@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Audio.Managers;
 
 namespace Core.Managers
 {
@@ -47,10 +48,12 @@ namespace Core.Managers
 
             _currentMovesLimitation++;
             _movesLimitationText.text = $"{_requiredMovesLimitation - _currentMovesLimitation}";
-            ;
+
             IsMovesLimitationAchieved = _currentMovesLimitation >= _requiredMovesLimitation;
 
             TrySetLoopAnimation();
+            if (IsMovesLimitationAchieved)
+                AudioManager.PlaySfx("MovesOver");
         }
 
         private void TrySetLoopAnimation()
@@ -61,7 +64,11 @@ namespace Core.Managers
 
             var sequence = DOTween.Sequence();
 
-            sequence.Append(_movesLimitationText.DOColor(_criticalLowMovesColor, _criticalLowAnimationDuration));
+            sequence.Append(
+                _movesLimitationText.DOColor(_criticalLowMovesColor, _criticalLowAnimationDuration)
+                    .OnComplete(() => AudioManager.PlaySfxWithPitch("LowMovesLeft"))
+            );
+
             sequence.Append(_movesLimitationText.DOColor(Color.white, _criticalLowAnimationDuration));
             sequence.SetEase(Ease.InOutExpo);
 
@@ -75,7 +82,7 @@ namespace Core.Managers
             if (_flashingTween == null)
                 return;
 
-            _flashingTween.OnComplete(null);
+            _flashingTween.OnComplete(() => _flashingTween = null);
             _flashingTween.SetAutoKill(true);
         }
 
