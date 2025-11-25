@@ -3,6 +3,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Audio.Managers;
 using Core.Data;
 
 namespace Core.Managers
@@ -91,9 +92,12 @@ namespace Core.Managers
                     break;
             }
 
-            if (IsGoalAchieved)
-                Instantiate(_goalAchievedEffect, new Vector2(_effectSpawnPoint.x, _effectSpawnPoint.y),
-                    Quaternion.identity, _effectsContainer);
+            if (!IsGoalAchieved)
+                return;
+
+            AudioManager.PlaySfx("GoalAchieved");
+            Instantiate(_goalAchievedEffect, new Vector2(_effectSpawnPoint.x, _effectSpawnPoint.y),
+                Quaternion.identity, _effectsContainer);
         }
 
         private void OnDrawGizmosSelected()

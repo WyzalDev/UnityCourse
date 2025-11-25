@@ -1,8 +1,10 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Audio.Managers;
 using UI.Animations;
 using UI.Data;
 using UI.Managers;
@@ -38,6 +40,14 @@ namespace UI.Views.Game
             base.Show(data);
 
             Instantiate(_popupText, _popupTransform);
+            StartCoroutine(PlaySfxCoroutine());
+        }
+
+        private static IEnumerator PlaySfxCoroutine()
+        {
+            AudioManager.PlaySfx("LevelComplete");
+            yield return new WaitForSecondsRealtime(0.5f);
+            AudioManager.PlaySfx("Applause");
         }
 
         private void OnRestartButtonClicked()

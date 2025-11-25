@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using Core.Data;
 using Core.Grid;
 using Core.Managers;
-using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Core.StateMachine.States
 {

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2499065889745935588}
   - component: {fileID: 2499065889745935591}
   - component: {fileID: 2499065889745935589}
+  - component: {fileID: 1103567709378909809}
   m_Layer: 5
   m_Name: YellowButton
   m_TagString: Untagged
@@ -197,6 +198,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1103567709378909809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499065889745935585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3103e58513d54aafac6d650c9c0e36f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2499065889745935589}
 --- !u!1 &2499065891068921894
 GameObject:
   m_ObjectHideFlags: 0

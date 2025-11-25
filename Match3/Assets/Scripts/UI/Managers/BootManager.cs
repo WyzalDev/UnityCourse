@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using UnityEngine;
+using Audio.Managers;
 using UI.Views.Menu;
 
 namespace UI.Managers
@@ -10,6 +11,7 @@ namespace UI.Managers
         private void Start()
         {
             PageManager.Show<MainMenuPage>();
+            AudioManager.PlayMusic("MenuMusic");
         }
     }
 }

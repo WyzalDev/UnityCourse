@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using Audio.Managers;
 using Core.Data;
 using Core.Grid;
 
@@ -47,6 +48,7 @@ namespace Core.Managers
             {
                 _gridManager.GetElementView(CurrentElement.X, CurrentElement.Y).PlayDeselect();
                 _chainElements.RemoveLast();
+                AudioManager.PlaySfxWithPitch("RemoveFromChain");
                 return true;
             }
 
@@ -55,7 +57,17 @@ namespace Core.Managers
 
             _chainElements.AddLast(element);
             _gridManager.GetElementView(element.X, element.Y).PlaySelect();
+            PlayAddToChainSfxOnType(element.Type);
             return true;
+        }
+
+        private void PlayAddToChainSfxOnType(ElementType type)
+        {
+            if (type.IsGem())
+                AudioManager.PlaySfxWithPitch("AddToChain");
+
+            if (type.IsBonus())
+                AudioManager.PlaySfxWithPitch("AddBonusToChain");
         }
 
         public void Restore()

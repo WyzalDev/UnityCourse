@@ -1,11 +1,12 @@
 ﻿// Copyright (c) 2012-2025 FuryLion Group. All Rights Reserved.
 
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using Audio.Managers;
 using Core.Data;
 using Core.Managers;
 using Core.Utils;
-using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Core.StateMachine.States
 {
@@ -82,6 +83,7 @@ namespace Core.StateMachine.States
             if (!_chainManager.TryStartChain())
                 return;
 
+            AudioManager.PlaySfxWithPitch("AddToChain");
             FiniteStateMachine.SetState<InChainState>();
         }
 

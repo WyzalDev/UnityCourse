@@ -2,7 +2,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Audio.Managers;
 using Core.Data;
 using Core.Managers;
 using Core.Utils;
@@ -65,6 +67,7 @@ namespace Core.Grid
                         Grid[bonus.X][j].SetElementType(ElementType.None);
                     }
 
+                    AudioManager.PlaySfxWithPitch("RocketActivation");
                     EffectManager.SpawnRocketEffect(bonus.X);
 
                     break;
@@ -96,6 +99,7 @@ namespace Core.Grid
                         }
                     }
 
+                    AudioManager.PlaySfxWithPitch("BombActivation");
                     EffectManager.SpawnBombEffect(bonus.X, bonus.Y, BombSize);
 
                     break;
@@ -105,6 +109,15 @@ namespace Core.Grid
         public void ReduceNeighborObstaclesDurability(Action<ElementType> tryAddGoalScoreAction,
             ICollection<Element> obstacles)
         {
+            if (obstacles.Count == 0)
+                return;
+
+            if (obstacles.FirstOrDefault(x => x.Type is ElementType.Ice or ElementType.BrokenIce) != null)
+                AudioManager.PlaySfxWithPitch("IceCrush");
+
+            if (obstacles.FirstOrDefault(x => x.Type is ElementType.Rock or ElementType.BrokenRock) != null)
+                AudioManager.PlaySfxWithPitch("RockCrush");
+
             foreach (var obstacle in obstacles)
             {
                 switch (obstacle.Type)
