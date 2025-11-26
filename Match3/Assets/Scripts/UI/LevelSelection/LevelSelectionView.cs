@@ -17,8 +17,6 @@ namespace UI.LevelSelection
 
         public Action<LevelSelectionView> Clicked;
 
-        private bool _isSelected;
-
         public int LevelIndex { get; private set; }
 
         public void Initialize(int level)
@@ -31,13 +29,11 @@ namespace UI.LevelSelection
         public void Unselect()
         {
             _selectedFade.gameObject.SetActive(false);
-            _isSelected = false;
         }
 
         public void Select()
         {
             _selectedFade.gameObject.SetActive(true);
-            _isSelected = true;
         }
 
         private void InvokeOnClick()

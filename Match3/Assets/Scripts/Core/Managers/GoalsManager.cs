@@ -37,9 +37,14 @@ namespace Core.Managers
         public void Initialize(GoalsConfig config, Sprite elementSprite)
         {
             _goalType = config.GoalType;
-            _elementType = config.GoalElementType;
             _requiredValue = config.RequiredValue;
             _currentValue = 0;
+            _elementType = config.GoalElementType switch
+            {
+                ElementType.Ice => ElementType.BrokenIce,
+                ElementType.Rock => ElementType.BrokenRock,
+                _ => config.GoalElementType
+            };
 
             switch (_goalType)
             {
