@@ -120,6 +120,8 @@ namespace Core.Grid
 
             foreach (var obstacle in obstacles)
             {
+                tryAddGoalScoreAction?.Invoke(obstacle.Type);
+
                 switch (obstacle.Type)
                 {
                     case ElementType.Ice:
@@ -135,8 +137,6 @@ namespace Core.Grid
                         obstacle.SetElementType(ElementType.None);
                         break;
                 }
-
-                tryAddGoalScoreAction?.Invoke(obstacle.Type);
             }
         }
 

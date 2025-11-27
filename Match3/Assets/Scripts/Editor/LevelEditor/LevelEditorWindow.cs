@@ -14,6 +14,7 @@ namespace Editor.LevelEditor
     {
         private const string LevelsPath = "Levels";
         private const string ElementsTexturePath = "Assets/Textures/Board";
+        private const string DefaultLevelName = "Default";
 
         private const int GemsTypeNumber = 5;
         private const int HeightLimit = 11;
@@ -42,6 +43,7 @@ namespace Editor.LevelEditor
         private ElementType[][] _field;
 
         private string _levelName = string.Empty;
+        private TextAsset _textAsset;
         private string _loadLevelName;
 
         private GUIStyle _centeredTextStyle;
@@ -169,10 +171,16 @@ namespace Editor.LevelEditor
             GUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
             GUILayout.Label("Create Or Load Level", _centeredTextStyle);
+            GUILayout.Space(20f);
 
             GUILayout.BeginHorizontal();
-            _loadLevelName = EditorGUILayout.TextField("Level Name", _loadLevelName, _centeredTextFieldStyle);
+            GUILayout.FlexibleSpace();
+            GUILayout.Label("Level :", _centeredTextStyle);
+            _textAsset = EditorGUILayout.ObjectField(_textAsset, typeof(TextAsset), false) as TextAsset;
+            GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
+
+            GUILayout.Space(20f);
 
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Create Level", _centeredButtonStyle))
@@ -189,7 +197,7 @@ namespace Editor.LevelEditor
                 GUILayout.FlexibleSpace();
 
             if (_isLoadingFileNotExists)
-                GUILayout.Label("Level with current Name not exists", _centeredRedTextStyle);
+                GUILayout.Label("Can't load level, field Level is null", _centeredRedTextStyle);
             else
                 GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
@@ -200,47 +208,30 @@ namespace Editor.LevelEditor
 
         private void CreateLevel()
         {
-            if (_loadLevelName is null || _loadLevelName.Length == 0 ||
-                File.Exists($"Assets/Resources/{LevelsPath}/{_loadLevelName}.txt"))
-            {
-                _isCreatingFileAlreadyExistsOrNull = true;
-                _isLoadingFileNotExists = false;
-                return;
-            }
-
             _levelConfig = new LevelConfig();
 
             SetConfigValues(true);
-            _levelName = _loadLevelName;
+            _levelName = DefaultLevelName;
             _isLevelLoaded = true;
         }
 
         private void LoadLevel()
         {
-            if (_loadLevelName is null || _loadLevelName.Length == 0 ||
-                !File.Exists($"Assets/Resources/{LevelsPath}/{_loadLevelName}.txt"))
+            if (_textAsset is null)
             {
                 _isLoadingFileNotExists = true;
                 _isCreatingFileAlreadyExistsOrNull = false;
                 return;
             }
 
-            try
-            {
-                var loadedConfig = File.ReadAllText($"Assets/Resources/{LevelsPath}/{_loadLevelName}.txt");
+            _levelConfig = JsonUtility.FromJson<LevelConfig>(_textAsset.text);
+            SetConfigValues();
 
-                _levelConfig = JsonUtility.FromJson<LevelConfig>(loadedConfig);
-                SetConfigValues();
+            _levelName = _textAsset.name;
+            _loadLevelName = _textAsset.name;
+            _isLevelLoaded = true;
 
-                _levelName = _loadLevelName;
-                _isLevelLoaded = true;
-
-                Debug.Log($"Loaded File {LevelsPath}/{_loadLevelName}.txt");
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Failed to load Level {_loadLevelName} \n {e.Message}");
-            }
+            Debug.Log($"Loaded File {LevelsPath}/{_levelName}.txt");
         }
 
         private void SetConfigValues(bool isRestore = false)
@@ -297,6 +288,7 @@ namespace Editor.LevelEditor
                 if (_isValidationSucces)
                     SaveLevel();
             }
+
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
@@ -426,6 +418,7 @@ namespace Editor.LevelEditor
                             GUILayout.Height(30), GUILayout.Width(30)))
                         ShowFieldElementGenericMenu(i, j);
                 }
+
                 GUILayout.EndHorizontal();
             }
         }
@@ -613,7 +606,7 @@ namespace Editor.LevelEditor
             var newFieldConfig = new FieldConfig(_fieldHeight, _fieldWidth, _field);
             var newConfig = new LevelConfig(_movesLimitation, _seed, newGoalsConfig, newFieldConfig);
 
-            if (!string.Equals(_levelName, _loadLevelName))
+            if (_loadLevelName != null && !string.Equals(_levelName, _loadLevelName))
             {
                 try
                 {
@@ -642,6 +635,7 @@ namespace Editor.LevelEditor
 
             _isLevelLoaded = false;
             Restore();
+            AssetDatabase.Refresh();
         }
 
         private void Restore()
@@ -653,6 +647,8 @@ namespace Editor.LevelEditor
             _isLoadingFileNotExists = false;
             _isValidationSucces = false;
             _validationErrorMessage = string.Empty;
+            _textAsset = null;
+            _loadLevelName = null;
         }
 
         [Serializable]
