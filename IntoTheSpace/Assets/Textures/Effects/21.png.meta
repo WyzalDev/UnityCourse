@@ -1,61 +1,10 @@
 fileFormatVersion: 2
-guid: 4f3d72382d231c84d9d0e3f2f9b213f6
+guid: 1067fc46b49ca624dadbf18f156547d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2442300942474781917
-    second: HPAndStaminaBars_0
-  - first:
-      213: -3309743226470883584
-    second: HPAndStaminaBars_1
-  - first:
-      213: -7306608170540655415
-    second: HPAndStaminaBars_2
-  - first:
-      213: 1757711490056804727
-    second: HPAndStaminaBars_3
-  - first:
-      213: 1049441912310836633
-    second: HPAndStaminaBars_4
-  - first:
-      213: -3135862529103415626
-    second: HPAndStaminaBars_5
-  - first:
-      213: -1604630906228982890
-    second: HPAndStaminaBars_6
-  - first:
-      213: 9025637608060447111
-    second: HPAndStaminaBars_7
-  - first:
-      213: -5290811641849105739
-    second: HPAndStaminaBars_8
-  - first:
-      213: 7946166275167998506
-    second: HPAndStaminaBars_9
-  - first:
-      213: -1949680652429788249
-    second: HPAndStaminaBars_10
-  - first:
-      213: 772609365651244642
-    second: HPAndStaminaBars_11
-  - first:
-      213: 7568912505532382162
-    second: HPAndStaminaBars_12
-  - first:
-      213: 8881613522169820112
-    second: HPAndStaminaBars_13
-  - first:
-      213: 6045577735714760030
-    second: HPAndStaminaBars_14
-  - first:
-      213: -8082312120222580552
-    second: HPAndStaminaBars_15
-  - first:
-      213: -5418382307081061786
-    second: HPAndStaminaBars_16
-  - first:
-      213: -6944510481024243657
-    second: HPAndStaminaBars_17
+      213: -5750353039905602045
+    second: 21_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -88,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +54,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
+  alphaUsage: 2
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -126,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -164,67 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HPAndStaminaBars_0
+      name: 21_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 248
-        width: 1420
-        height: 434
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32b50319b343b1ed0800000000000000
-      internalID: -2442300942474781917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HPAndStaminaBars_1
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 115
-        width: 916
-        height: 69
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00f9270421e6112d0800000000000000
-      internalID: -3309743226470883584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HPAndStaminaBars_17
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 44
-        width: 304
-        height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 738a297d28420af90800000000000000
-      internalID: -6944510481024243657
+      spriteID: 306c65b7064a230b0800000000000000
+      internalID: -5750353039905602045
       vertices: []
       indices: 
       edges: []
@@ -233,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11d98bb41aa7e4c4db2a3ac0874db6d6
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -243,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HPAndStaminaBars_0: -2442300942474781917
-      HPAndStaminaBars_1: -3309743226470883584
-      HPAndStaminaBars_17: -6944510481024243657
-      HPAndStaminaBars_18: 592843776
+      21_0: -5750353039905602045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

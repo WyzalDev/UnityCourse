@@ -9,8 +9,10 @@ namespace Core.Data
     {
         [SerializeField] [Range(0.001f, 1)] private float _percentPerHit;
         [SerializeField] private float _damagePercent;
+        [SerializeField] private ParticleSystem _ultimateEffect;
 
         public float PercentPerHit => _percentPerHit;
         public float DamagePercent => _damagePercent;
+        public ParticleSystem UltimateEffect => _ultimateEffect;
     }
 }

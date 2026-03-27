@@ -67,6 +67,9 @@ namespace Core
                 return;
 
             AudioManager.PlaySfx(UltimateUsedSoundName);
+            if (_ultimateConfig.UltimateEffect != null)
+                Instantiate(_ultimateConfig.UltimateEffect, transform.position, Quaternion.identity);
+
             Restore();
             OnUltimateUsed?.Invoke(_baseDamage * _ultimateMultiplier);
         }
